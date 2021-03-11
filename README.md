@@ -1,3 +1,5 @@
-# repo-setup-demo
+# Find Your Font
 
-This is a test for the upcoming project- branching out to test
+Link to Wireframe via Figma
+
+https://github.com/hanlee-311/project_1.git
