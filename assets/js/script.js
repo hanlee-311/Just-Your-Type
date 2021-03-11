@@ -1,6 +1,6 @@
 
 var quoteAPI = 'https://quote-garden.herokuapp.com/api/v3/quotes'
-var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyApTTfxzWtDTJAFO8DS8W5vBBqqPCCKmUs'
+var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?'
 var quoteDisplayEl = document.querySelector('.quote');
 var fontNameDisplay = document.querySelector('.font-name');
 
@@ -44,7 +44,7 @@ function displayFont(fontFamily, fontCategory) {
 //displays quote to card--- need to add randomizer
 function displayQuote(quoteText, quoteAuthor) {
 
-    quoteDisplayEl.textContent = quoteText + " -" + quoteAuthor;
+    quoteDisplayEl.textContent = '"' + quoteText + '"' + " -" + quoteAuthor;
     
     }
 
