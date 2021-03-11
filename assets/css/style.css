@@ -1,0 +1,56 @@
+:root {
+    --main-color: #ffdada;
+    --text-color: #222831;
+    --button-color: #9DDFD3;
+}
+.mainFontCard {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+    height: 60%;
+    padding: auto;
+    margin: auto;
+    background-color: var(--main-color);
+}
+
+.fontCardContainer  {
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.insideCard {
+    padding: 2rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.nav-wrapper {
+    background-color: var(--main-color);
+}
+    
+.navText {
+    color: var(--text-color);
+    margin: 0 2rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+}
+
+.logo {
+    color: var(--text-color);
+    padding: 0 2rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+}
+
+.cardButtons {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    justify-content: space-between;
+    margin: 0 4rem;
+}
+
+#favorite-btn {
+    background-color: var(--button-color);
+}
