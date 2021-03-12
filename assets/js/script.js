@@ -1,7 +1,8 @@
 
 var quoteAPI = 'https://quote-garden.herokuapp.com/api/v3/quotes'
-var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyApTTfxzWtDTJAFO8DS8W5vBBqqPCCKmUs'
+var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?'
 var quoteDisplayEl = document.querySelector('.quote');
+var fontNameDisplay = document.querySelector('.font-name');
 var familyDisplayEl = document.querySelector('.font-name');
 
 
@@ -18,9 +19,14 @@ fetch(fontAPI)
     // family
     console.log(data.items[1].family);
 
+    
+    displayFont(data.items[1].family, data.items[1].category);
+
+
     fontFamily = data.items[1].family;
 
     displayFont(fontFamily);
+
 
 });
 
@@ -30,12 +36,33 @@ fetch(quoteAPI)
     return response.json();
   })
   .then(function (data) {
-      console.log(data.data[1].quoteText);
-      console.log(data.data[1].quoteAuthor);
+    // quote
+    console.log(data.data[1].quoteText);
+    //author
+    console.log(data.data[1].quoteAuthor);
+
+displayQuote(data.data[1].quoteText, data.data[1].quoteAuthor)
 
       quoteAuthor = data.data[1].quoteAuthor;
       quoteText = data.data[1].quoteText;
       quoteInfo = quoteText + " -" + quoteAuthor;
+
+
+
+//displays font name and category to card--- need to add randomizer
+function displayFont(fontFamily, fontCategory) {
+
+    fontNameDisplay.textContent = fontFamily + ", " + fontCategory;
+    
+    }
+
+//displays quote to card--- need to add randomizer
+function displayQuote(quoteText, quoteAuthor) {
+
+    quoteDisplayEl.textContent = '"' + quoteText + '"' + " -" + quoteAuthor;
+    
+    }
+
 
       displayQuote(quoteInfo);
       
@@ -60,3 +87,4 @@ function saveFont() {
 document.getElementById('favorite-btn').addEventListener("click", saveFont);
 
 displayQuote();      
+
