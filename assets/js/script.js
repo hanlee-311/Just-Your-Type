@@ -6,6 +6,12 @@ var fontNameDisplay = document.querySelector('.font-name');
 var familyDisplayEl = document.querySelector('.font-name');
 var fontData  
 var quoteData
+var currentFontFamily
+var currentFontLink
+
+
+
+
 
 
 //Fetch information from Google fonts API and stores in variable
@@ -33,8 +39,9 @@ fetch(fontAPI)
         // family
         console.log(fontData.items[item].family);
 
-        var currentFontFamily = fontData.items[item].family;
+        currentFontFamily = fontData.items[item].family;
         console.log(currentFontFamily);
+        currentFontLink = fontData.items[item].files.regular;
 
         //append new stylesheet to head
         $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + currentFontFamily + "' rel='stylesheet'>");
@@ -116,6 +123,30 @@ function goToAboutPage () {
     renderNewFont();
   }
 
+// Function to render a new font and quote combo and save favorite
+function renderNewSave () {
+    renderNewQuote();
+    renderNewFont();
+    
+    var fontInfo = {
+        fontFamily: currentFontFamily,
+        fontLink: currentFontLink,
+    }
+
+    if (!localStorage.getItem("favorite")){
+        var fontArray=[];
+        localStorage.setItem("favorite", JSON.stringify(fontArray))
+    }
+
+    var storedFavorites = JSON.parse(localStorage.getItem("favorite"));
+
+    storedFavorites.push(fontInfo);
+
+    localStorage.setItem("favorite", JSON.stringify(storedFavorites));
+
+    console.log(storedFavorites);
+  }
+
 
 //Favorite button for user to save information
 document.getElementById('favorite-btn').addEventListener("click", saveFont);
@@ -129,7 +160,7 @@ document.getElementById('about-page-btn').addEventListener("click", goToAboutPag
 //go to new quote
 document.getElementById('btn-down').addEventListener("click", renderNew);
 
-document.getElementById('btn-up').addEventListener("click", renderNew);
+document.getElementById('btn-up').addEventListener("click", renderNewSave);
 
 displayFont();
 displayQuote();
