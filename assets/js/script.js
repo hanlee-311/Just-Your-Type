@@ -83,11 +83,20 @@ function goToFavoritesPage () {
   window.location.href = "favorite.html"
 };
 
+// Function to go to favorites page
+function goToAboutPage () {
+    window.location.href = "about.html"
+  };
+  
+
 //Favorite button for user to save information
 document.getElementById('favorite-btn').addEventListener("click", saveFont);
 
 //Go to favorites page
 document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
+
+//Go to About page
+document.getElementById('about-page-btn').addEventListener("click", goToAboutPage);
 
 
 displayFont();
