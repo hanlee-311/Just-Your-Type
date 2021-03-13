@@ -1,5 +1,7 @@
+var pageNum = Math.floor(Math.random() * 10); 
+console.log(pageNum);
 
-var quoteAPI = 'https://quote-garden.herokuapp.com/api/v3/quotes'
+var quoteAPI = 'https://quote-garden.herokuapp.com/api/v3/quotes?genre=love&page=' + pageNum
 var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyApTTfxzWtDTJAFO8DS8W5vBBqqPCCKmUs'
 var quoteDisplayEl = document.querySelector('.quote');
 var fontNameDisplay = document.querySelector('.font-name');
@@ -10,10 +12,7 @@ var currentFontFamily
 var currentFontLink
 
 
-
-
-
-
+console.log(quoteAPI);
 //Fetch information from Google fonts API and stores in variable
 fetch(fontAPI)
     .then(function (response) {
@@ -61,7 +60,6 @@ fetch(quoteAPI)
         return response.json();
     })
     .then(function (data) {
-
         quoteData = data;
         renderNewQuote();
     });
