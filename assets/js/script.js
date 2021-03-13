@@ -2,7 +2,7 @@ var pageNum = Math.floor(Math.random() * 10);
 console.log(pageNum);
 
 var quoteAPI = 'https://quote-garden.herokuapp.com/api/v3/quotes?genre=love&page=' + pageNum
-var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyApTTfxzWtDTJAFO8DS8W5vBBqqPCCKmUs'
+var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=AIzaSyApTTfxzWtDTJAFO8DS8W5vBBqqPCCKmUs'
 var quoteDisplayEl = document.querySelector('.quote');
 var fontNameDisplay = document.querySelector('.font-name');
 var familyDisplayEl = document.querySelector('.font-name');
