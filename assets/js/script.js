@@ -1,6 +1,6 @@
 
 var quoteAPI = 'https://quote-garden.herokuapp.com/api/v3/quotes'
-var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?'
+var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyApTTfxzWtDTJAFO8DS8W5vBBqqPCCKmUs'
 var quoteDisplayEl = document.querySelector('.quote');
 var fontNameDisplay = document.querySelector('.font-name');
 
@@ -10,13 +10,13 @@ fetch(fontAPI)
   })
   .then(function (data) {
     // link to download
-    console.log(data.items[1].files.regular);
+    console.log(data.items[2].files.regular);
     // serif/sans
-    console.log(data.items[1].category);
+    console.log(data.items[2].category);
     // family
-    console.log(data.items[1].family);
+    console.log(data.items[2].family);
     
-    displayFont(data.items[1].family, data.items[1].category);
+    displayFont(data.items[2].family, data.items[2].category);
 });
 
 fetch(quoteAPI)
@@ -24,12 +24,13 @@ fetch(quoteAPI)
     return response.json();
   })
   .then(function (data) {
+      console.log(data);
     // quote
-    console.log(data.data[1].quoteText);
+    console.log(data.data[2].quoteText);
     //author
-    console.log(data.data[1].quoteAuthor);
+    console.log(data.data[2].quoteAuthor);
 
-displayQuote(data.data[1].quoteText, data.data[1].quoteAuthor)
+displayQuote(data.data[2].quoteText, data.data[2].quoteAuthor)
 
 });
 
