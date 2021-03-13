@@ -109,7 +109,13 @@ function goToFavoritesPage () {
 function goToAboutPage () {
     window.location.href = "about.html"
   };
-  
+
+// Function to render a new font and quote combo on each click
+  function renderNew () {
+    renderNewQuote();
+    renderNewFont();
+  }
+
 
 //Favorite button for user to save information
 document.getElementById('favorite-btn').addEventListener("click", saveFont);
@@ -120,6 +126,10 @@ document.getElementById('favorite-page-btn').addEventListener("click", goToFavor
 //Go to About page
 document.getElementById('about-page-btn').addEventListener("click", goToAboutPage);
 
+//go to new quote
+document.getElementById('btn-down').addEventListener("click", renderNew);
+
+document.getElementById('btn-up').addEventListener("click", renderNew);
 
 displayFont();
 displayQuote();
