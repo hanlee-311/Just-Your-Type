@@ -100,7 +100,10 @@ function displayQuote(quoteText, quoteAuthor) {
 
 //Function to save information
 function saveFont() {
-    M.toast({ html: 'Clicked!' })
+    M.toast({ html: '❤️!' })
+};
+function newFont() {
+    M.toast({ html: '💩!' })
 };
 
 // Function to go to favorites page
@@ -145,7 +148,8 @@ function renderNewSave () {
 
 
 //Favorite button for user to save information
-document.getElementById('favorite-btn').addEventListener("click", saveFont);
+document.getElementById('btn-up').addEventListener("click", saveFont);
+document.getElementById('btn-down').addEventListener("click", newFont);
 
 //Go to favorites page
 document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
