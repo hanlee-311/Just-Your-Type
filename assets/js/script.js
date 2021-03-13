@@ -6,12 +6,14 @@ var fontNameDisplay = document.querySelector('.font-name');
 var familyDisplayEl = document.querySelector('.font-name');
 
 
+
 //Fetch information from Google fonts API and applies to card elements
 fetch(fontAPI)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
+        console.log(data);
         // link to download
         console.log(data.items[5].files.regular);
         // serif/sans
@@ -22,6 +24,9 @@ fetch(fontAPI)
         var currentFontFamily = data.items[5].family;
         console.log(currentFontFamily);
 
+        //append new stylesheet to head
+        $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + currentFontFamily + "' rel='stylesheet'>");
+        
         //applies font family to card content
         fontNameDisplay.style.fontFamily = currentFontFamily;
         quoteDisplayEl.style.fontFamily = currentFontFamily;
@@ -39,11 +44,11 @@ fetch(quoteAPI)
     .then(function (data) {
         console.log(data);
         // quote
-        console.log(data.data[9].quoteText);
+        console.log(data.data[5].quoteText);
         //author
-        console.log(data.data[9].quoteAuthor);
+        console.log(data.data[5].quoteAuthor);
 
-        displayQuote(data.data[9].quoteText, data.data[9].quoteAuthor)
+        displayQuote(data.data[5].quoteText, data.data[5].quoteAuthor)
 
         quoteAuthor = data.data[1].quoteAuthor;
         quoteText = data.data[1].quoteText;
