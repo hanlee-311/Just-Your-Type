@@ -1,3 +1,31 @@
+var favoriteCollection = document.getElementById('favorite-wrapper');
+
+//Rendering favorites on fave
+function renderFavorites () {
+  savedFavorites = JSON.parse(localStorage.getItem('favorite'));
+
+  for (var i = 0; i < savedFavorites.length; i++) {
+
+      favoriteCollection.insertAdjacentHTML("beforebegin", `
+      <div class="row">
+            <div class="col s4">
+                <div class="container fontCardContainerFavorite">
+                  <div class="card hoverable mainFontCardFavorite">
+                      <div class="card-content insideCard">
+                        <span class="card-title font-name insideCard"></span>
+                        <p class="insideCard">${savedFavorites[i].fontFamily}</p>
+                        <a class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      `)
+  }
+};
+
+
+
 // Function to go to home page
 function goToHomePage () {
     window.location.href = "index.html"
@@ -27,3 +55,5 @@ document.getElementById('about-page-btn').addEventListener("click", goToAboutPag
 
 //Go to favorites page
 document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
+
+renderFavorites();
