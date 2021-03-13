@@ -15,7 +15,7 @@ function goToAboutPage () {
 
 //Favorite btn listener
 $('.favorite-btn').on('click', function () {
-  M.toast({ html: 'Clicked!' })
+  M.toast({ html: '❤️!' })
   
 });
 

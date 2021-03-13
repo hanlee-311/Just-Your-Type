@@ -1,9 +1,29 @@
 # Find Your Font
 
-Link to Wireframe via Figma
+## Description
+
+We have gamified the task of finding new fonts. Find Your Font combines the user interface of a dating application and with the excitement of new typography. Our web application uses Google Fonts API and applies the styling to a random quote generator via Quote Garden. With Find Your Font, users can see how a font is utilized with different characters, while also enjoying some wisdom of love. 
+
+## Prerequisite
+
+While Find Your Font mainly targets designers who utilize typography, this application is accessible to any user with an interest in typography.
+
+## Access
+
+Check out how Find Your Font works at
 
 https://github.com/hanlee-311/project_1.git
 
-Link to REPO
 
-https://github.com/hanlee-311/project_1
+## Our Design Process
+
+We took inspiration from dating apps such as Tinder and Bumble. We chose to use colors that were soft and invoked feelings of love. We created a mock-up design on Figma.
+
+Link to Wireframe via Figma
+https://github.com/hanlee-311/project_1.git
+
+![FigmaDesign](assets/figmaFYF.png)
+
+
+Our deployed version is a much cleaner version of our mock-up. We wanted to make it clear to where all the actions happen.
+![ActualDesign](assets/FYF1.png)
