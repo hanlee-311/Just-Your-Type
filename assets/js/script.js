@@ -4,24 +4,36 @@ var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyApTTfxz
 var quoteDisplayEl = document.querySelector('.quote');
 var fontNameDisplay = document.querySelector('.font-name');
 var familyDisplayEl = document.querySelector('.font-name');
+var fontData  
+var quoteData
 
 
-
-//Fetch information from Google fonts API and applies to card elements
+//Fetch information from Google fonts API and stores in variable
 fetch(fontAPI)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
-        console.log(data);
-        // link to download
-        console.log(data.items[5].files.regular);
-        // serif/sans
-        console.log(data.items[5].category);
-        // family
-        console.log(data.items[5].family);
 
-        var currentFontFamily = data.items[5].family;
+        fontData = data;
+        renderNewFont ();
+    });
+       
+
+//function to randomly apply new font to card elements
+    function renderNewFont () {
+        var item = Math.floor(Math.random() * 100); 
+        console.log(item);
+        
+        console.log(fontData);
+        // link to download
+        console.log(fontData.items[item].files.regular);
+        // serif/sans
+        console.log(fontData.items[item].category);
+        // family
+        console.log(fontData.items[item].family);
+
+        var currentFontFamily = fontData.items[item].family;
         console.log(currentFontFamily);
 
         //append new stylesheet to head
@@ -31,31 +43,41 @@ fetch(fontAPI)
         fontNameDisplay.style.fontFamily = currentFontFamily;
         quoteDisplayEl.style.fontFamily = currentFontFamily;
 
-        displayFont(data.items[5].family, data.items[5].category);
+        displayFont(fontData.items[item].family, fontData.items[item].category);
 
 
-    });
+    };
 
-//Fetch information from Quote Garden API
+//Fetch information from Quote Garden API and store in variable
 fetch(quoteAPI)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
-        console.log(data);
+
+        quoteData = data;
+        renderNewQuote();
+    });
+
+//function to randomly apply new quote to card elements
+function renderNewQuote(){
+        
+        var item = Math.floor(Math.random() * 10); 
+        console.log(item);
+
+        console.log(quoteData);
         // quote
-        console.log(data.data[5].quoteText);
+        console.log(quoteData.data[item].quoteText);
         //author
-        console.log(data.data[5].quoteAuthor);
+        console.log(quoteData.data[item].quoteAuthor);
 
-        displayQuote(data.data[5].quoteText, data.data[5].quoteAuthor)
+        displayQuote(quoteData.data[item].quoteText, quoteData.data[item].quoteAuthor)
 
-        quoteAuthor = data.data[1].quoteAuthor;
-        quoteText = data.data[1].quoteText;
+        quoteAuthor = quoteData.data[item].quoteAuthor;
+        quoteText = quoteData.data[item].quoteText;
         quoteInfo = quoteText + " -" + quoteAuthor;
 
-
-    });
+    };
 
 //displays font name and category to card--- need to add randomizer
 function displayFont(fontFamily, fontCategory) {
