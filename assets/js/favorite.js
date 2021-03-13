@@ -5,3 +5,19 @@ function goToHomePage () {
   
 //Go to home page
 document.getElementById('home-page-btn').addEventListener("click", goToHomePage);
+
+// Function to go to favorites page
+function goToFavoritesPage () {
+  window.location.href = "favorite.html"
+};
+
+//Go to favorites page
+document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
+
+// Function to go to about page
+function goToAboutPage () {
+  window.location.href = "about.html"
+};
+
+//Go to About page
+document.getElementById('about-page-btn').addEventListener("click", goToAboutPage);
