@@ -43,15 +43,15 @@
     align-items: center;
 }
 
+
 .insideCard {
     padding: 2rem;
     color: var(--text-color);
     font-size: 1.5rem;
 }
-.cardButtons {
-    background-color: var(--button-color);
-    color: var(--text-color);
-    justify-content: space-between;
+
+
+
     font-family: 'Oswald', sans-serif;
 }
 
