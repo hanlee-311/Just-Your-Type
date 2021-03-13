@@ -60,7 +60,7 @@ fetch(quoteAPI)
     });
 
 //function to randomly apply new quote to card elements
-function renderNewQuote(){
+function renderNewQuote() {
         
         var item = Math.floor(Math.random() * 10); 
         console.log(item);
@@ -77,28 +77,26 @@ function renderNewQuote(){
         quoteText = quoteData.data[item].quoteText;
         quoteInfo = quoteText + " -" + quoteAuthor;
 
-    };
+};
 
 //displays font name and category to card--- need to add randomizer
 function displayFont(fontFamily, fontCategory) {
 
-            fontNameDisplay.textContent = fontFamily + ", " + fontCategory;
+    fontNameDisplay.textContent = fontFamily + ", " + fontCategory;
 
-        }
+}
 
 //displays quote to card--- need to add randomizer
 function displayQuote(quoteText, quoteAuthor) {
 
-            quoteDisplayEl.textContent = '"' + quoteText + '"' + " -" + quoteAuthor;
+    quoteDisplayEl.textContent = '"' + quoteText + '"' + " -" + quoteAuthor;
 
-        }
-
+}
 
 //Function to save information
 function saveFont() {
-            M.toast({ html: 'Clicked!' })
-        };
-
+    M.toast({ html: 'Clicked!' })
+};
 
 // Function to go to favorites page
 function goToFavoritesPage () {
