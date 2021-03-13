@@ -3,6 +3,23 @@
     --text-color: #222831;
     --button-color: #9DDFD3;
 }
+
+.logo {
+    color: var(--text-color);
+    padding: 0 2rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+}
+.nav-wrapper {
+    background-color: var(--main-color);
+}
+    
+.navText {
+    color: var(--text-color);
+    margin: 0 2rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+}
 .mainFontCard {
     justify-content: center;
     align-items: center;
@@ -15,10 +32,17 @@
 }
 
 .fontCardContainer  {
-    height: 90vh;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.centerContainer {
     justify-content: center;
     align-items: center;
 }
+
 
 .insideCard {
     padding: 2rem;
@@ -26,31 +50,30 @@
     font-size: 1.5rem;
 }
 
-.nav-wrapper {
-    background-color: var(--main-color);
-}
-    
-.navText {
-    color: var(--text-color);
-    margin: 0 2rem;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-}
 
-.logo {
-    color: var(--text-color);
-    padding: 0 2rem;
-    font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
-}
 
-.cardButtons {
-    background-color: var(--button-color);
-    color: var(--text-color);
-    justify-content: space-between;
-    margin: 0 4rem;
+    font-family: 'Oswald', sans-serif;
 }
 
 #favorite-btn {
     background-color: var(--button-color);
+}
+
+/* Favorite Page Style */
+
+.fontCardContainerFavorite  { 
+    justify-content: center;
+    align-items: center;
+
+}
+.mainFontCardFavorite {
+    background-color: var(--main-color);
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
