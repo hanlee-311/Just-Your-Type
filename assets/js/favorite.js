@@ -57,3 +57,12 @@ document.getElementById('about-page-btn').addEventListener("click", goToAboutPag
 document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
 
 renderFavorites();
+
+// Sidebar Nav
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+});
+
+var collapsibleElem = document.querySelector('.collapsible');
+var collapsibleInstance = M.Collapsible.init(collapsibleElem);
