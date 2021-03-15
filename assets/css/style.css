@@ -55,6 +55,13 @@
     font-size: 1.5rem;
 }
 
+.cardButtons {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    justify-content: space-between;
+    font-family: 'Oswald', sans-serif;
+}
+
 #favorite-btn {
     background-color: var(--button-color);
 }

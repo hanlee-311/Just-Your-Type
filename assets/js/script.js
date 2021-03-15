@@ -1,6 +1,5 @@
-var pageNum = Math.floor(Math.random() * 10); 
-console.log(pageNum);
 
+var pageNum = Math.floor(Math.random() * 10); 
 var quoteAPI = 'https://quote-garden.herokuapp.com/api/v3/quotes?genre=love&page=' + pageNum
 var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=AIzaSyApTTfxzWtDTJAFO8DS8W5vBBqqPCCKmUs'
 var quoteDisplayEl = document.querySelector('.quote');
@@ -10,9 +9,9 @@ var fontData
 var quoteData
 var currentFontFamily
 var currentFontLink
+var usedFonts= []
 
 
-console.log(quoteAPI);
 //Fetch information from Google fonts API and stores in variable
 fetch(fontAPI)
     .then(function (response) {
@@ -23,11 +22,28 @@ fetch(fontAPI)
         fontData = data;
         renderNewFont ();
     });
-       
+
+    //function to choose non-repeating random number
+    function chooseNumber(){
+            
+        var num = Math.floor(Math.random() * 100); 
+
+        if (usedFonts.includes(num)) {
+            chooseNumber();
+        } else { 
+            usedFonts.push(num);
+            console.log(usedFonts);
+            return num;
+        }
+    }
+
+
 
 //function to randomly apply new font to card elements
-    function renderNewFont () {
-        var item = Math.floor(Math.random() * 100); 
+     function renderNewFont () {
+         
+        var item = chooseNumber();
+
         console.log(item);
         
         console.log(fontData);
@@ -66,7 +82,7 @@ fetch(quoteAPI)
 
 //function to randomly apply new quote to card elements
 function renderNewQuote() {
-        
+
         var item = Math.floor(Math.random() * 10); 
         console.log(item);
 
@@ -95,7 +111,6 @@ function displayFont(fontFamily, fontCategory) {
 function displayQuote(quoteText, quoteAuthor) {
 
     quoteDisplayEl.textContent = '"' + quoteText + '"' + " -" + quoteAuthor;
-
 }
 
 //Function to save information
