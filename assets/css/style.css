@@ -20,6 +20,11 @@
     font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
 }
+
+#hamburgerMenu {
+    color: var(--text-color);
+}
+
 .mainFontCard {
     justify-content: center;
     align-items: center;
@@ -48,11 +53,6 @@
     padding: 2rem;
     color: var(--text-color);
     font-size: 1.5rem;
-}
-
-
-
-    font-family: 'Oswald', sans-serif;
 }
 
 #favorite-btn {
