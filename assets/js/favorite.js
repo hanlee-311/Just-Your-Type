@@ -21,6 +21,7 @@ function renderFavorites (card, wrapper, cards_per_page, page) {
                   <div class="card hoverable mainFontCardFavorite">
                       <div class="card-content insideCard">
                         <span class="card-title font-name insideCard"></span>
+                        <a class="insideCard" style="font-family:${savedFavorites[i].fontFamily}" href="${savedFavorites[i].fontLink}">Click Here to Download!</a>
                         <p class="insideCard" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</p>
                         <a class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
                         </div>
