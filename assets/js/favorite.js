@@ -1,29 +1,69 @@
-var favoriteCollection = document.getElementById('favorite-wrapper');
+var favoriteCollection = document.querySelector('.row');
+var favoritePagination = document.querySelector('.pagination');
+savedFavorites = JSON.parse(localStorage.getItem('favorite'));
+let current_page = 1;
+let numberOfCards = 6;
 
 //Rendering favorites on fave
-function renderFavorites () {
-  savedFavorites = JSON.parse(localStorage.getItem('favorite'));
+function renderFavorites (card, wrapper, cards_per_page, page) {
+  // wrapper.innHTML = "";
+  // page--;
+
+  // let start = cards_per_page * page;
+  // let paginatedItems = card.slice(start, end);
 
   for (var i = 0; i < savedFavorites.length; i++) {
+    $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + savedFavorites[i].fontFamily + "' rel='stylesheet'>");
 
-      favoriteCollection.insertAdjacentHTML("beforebegin", `
-      <div class="row">
+      favoriteCollection.insertAdjacentHTML("beforeend", `
             <div class="col s4">
                 <div class="container fontCardContainerFavorite">
                   <div class="card hoverable mainFontCardFavorite">
                       <div class="card-content insideCard">
                         <span class="card-title font-name insideCard"></span>
-                        <p class="insideCard">${savedFavorites[i].fontFamily}</p>
+                        <p class="insideCard" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</p>
                         <a class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
       `)
   }
 };
 
+// function setUpPagination (cards, wrapper, cards_per_page) {
+//   wrapper.innHTML = "";
+
+//   let page_count = Math.ceil(cards.length / cards_per_page);
+//   for (let i = 1; i < page_count + 1; i++) {
+//     let btn = PaginationButton(i, cards);
+//     wrapper.appendChild(btn);
+//   }
+// }
+
+// function PaginationButton (page, cards) {
+//   let button = document.createElement('button');
+//   button.innerText = page;
+
+//   if (current_page == page) button.classList.add('active');
+
+//   button.addEventListener('click', function () {
+//     current_page = page;
+//     renderFavorites(cards, favoriteCollection, numberOfCards, current_page);
+
+//     let start = cards_per_page * page;
+//     let end = start + cards_per_page;
+//     let paginatedItems = cards.slice(start, end);
+
+//     for (let i = 0; i < paginatedItems.length; i++) {
+//       favoritePagination.insertAdjacentHTML('beforeend', `
+//         <li class="active"><a href="#!">1</a></li>
+//       `)
+//     }
+//   })
+
+//   return button;
+// }
 
 
 // Function to go to home page
@@ -56,7 +96,9 @@ document.getElementById('about-page-btn').addEventListener("click", goToAboutPag
 //Go to favorites page
 document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
 
-renderFavorites();
+renderFavorites(savedFavorites, favoriteCollection, numberOfCards, current_page);
+// setUpPagination(savedFavorites, favoritePagination, numberOfCards);
+
 
 // Sidebar Nav
 document.addEventListener('DOMContentLoaded', function() {
