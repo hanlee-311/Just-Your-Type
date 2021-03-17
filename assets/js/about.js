@@ -11,6 +11,11 @@ function goToHomePage () {
   window.location.href = "index.html"
 };
 
+// Function to go to matchmaker page
+function goToMatchPage () {
+  window.location.href = "draggable.html"
+};
+
 // Function to go to favorites page
 function goToFavoritesPage () {
 window.location.href = "favorite.html"
@@ -23,6 +28,9 @@ window.location.href = "about.html"
 
 //Go to home page
 document.getElementById('home-page-btn').addEventListener("click", goToHomePage);
+
+//Go to Matchmaker page
+document.getElementById('match-page-btn').addEventListener("click", goToMatchPage);
 
 //Go to About page
 document.getElementById('about-page-btn').addEventListener("click", goToAboutPage);

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <title>Draggable</title>
+</head>
+<body>
+    <nav class="nav-wrapper">
+        <div class="container">
+          <a href="#" class="logo center-on-med-and-down">Just Your Type</a>
+          <a href="#" class="sidenav-trigger" data-target="mobile-links">
+            <i class="material-icons" id="hamburgerMenu">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a id="home-page-btn" class="navText" href="#l">Home</a></li>
+            <li><a id="about-page-btn" class="navText" href="#">About</a></li>
+            <li><a id="favorite-page-btn" class="navText" href="#">Fav's</a></li>
+            <li><a id="match-page-btn" class="navText" href="#">MatchMaker</a></li>
+          </ul>
+        </div>
+    </nav>
+    
+      <ul class="sidenav" id="mobile-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="favorite.html">Fav's</a></li>
+        <li><a href="draggable.html">MatchMaker</a></li>
+      </ul>
+     
+
+      <div class="row ">
+        <div class="col s12 fontCardContainer valign-wrapper">
+            <div class="draggable-font"></div>
+
+          <div class="card hoverable mainFontCard ">
+            <div class="card-content insideCard">
+              <span class="card-title font-name insideCard" style="font-size:3vw"></span>
+              <p class="quote insideCard" style="font-size:2vw"></p>
+           
+             </div>
+             <div class="card-action insideCard">
+               <a class="btn-small cardButtons left-align reset" style="margin:2vw" id="btn-down"><i class="material-icons">clear</i></a>
+               <a class="btn-small cardButtons right-align" style="margin:2vw" id="btn-up"><i class="material-icons ">favorite</i></a>
+             </div>
+           </div> 
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/draggable.js"></script>
+</body>
+</html>
