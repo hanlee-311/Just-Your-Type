@@ -129,3 +129,12 @@ strong {
 }
 
 
+.resizable {
+    font-size: 15px;
+
+}
+
+.draggable :hover {
+ cursor: pointer;
+}
+
