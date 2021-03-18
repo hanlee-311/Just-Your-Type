@@ -82,3 +82,12 @@
     width: 100%;
 }
 
+.resizable {
+    font-size: 15px;
+
+}
+
+.draggable :hover {
+ cursor: pointer;
+}
+

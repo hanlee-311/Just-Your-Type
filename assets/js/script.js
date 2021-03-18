@@ -126,9 +126,14 @@ function goToFavoritesPage () {
   window.location.href = "favorite.html"
 };
 
-// Function to go to favorites page
+// Function to go to about page
 function goToAboutPage () {
     window.location.href = "about.html"
+  };
+
+// Function to go to matchmaker page
+function goToMatchPage () {
+    window.location.href = "draggable.html"
   };
 
 // Function to render a new font and quote combo on each click
@@ -171,6 +176,9 @@ document.getElementById('favorite-page-btn').addEventListener("click", goToFavor
 
 //Go to About page
 document.getElementById('about-page-btn').addEventListener("click", goToAboutPage);
+
+//Go to Matchmaker page
+document.getElementById('match-page-btn').addEventListener("click", goToMatchPage);
 
 //go to new quote
 document.getElementById('btn-down').addEventListener("click", renderNew);
