@@ -19,12 +19,11 @@ function renderFavorites (card, wrapper, cards_per_page, page) {
 
       favoriteCollection.insertAdjacentHTML("beforeend", `
             <div class="col s4">
-                <div class="container fontCardContainerFavorite">
+                
                   <div class="card hoverable mainFontCardFavorite">
                       <div class="card-content insideCard">
-                        <span class="card-title font-name insideCard"></span>
-                        <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click Here to Download!</a>
-                        <p class="insideCard" style="font-family:${paginatedItems[i].fontFamily}">${paginatedItems[i].fontFamily}</p>
+                        <span class="card-title insideCard" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</span>
+                        <a class="insideCard" style="font-family:${savedFavorites[i].fontFamily}" href="${savedFavorites[i].fontLink}">Click Here to Download!</a>
                         <a id='${i}' class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
                         </div>
                     </div>
