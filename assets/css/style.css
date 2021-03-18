@@ -105,6 +105,7 @@
     text-transform: uppercase;
 }
 
+
 .aboutContainer {
     width: 100vw;
 }
@@ -117,3 +118,14 @@ strong {
     font-weight: 900;
 }
  
+
+.resizable {
+    font-size: 15px;
+
+}
+
+.draggable :hover {
+ cursor: pointer;
+}
+
+

@@ -1,6 +1,6 @@
 var favoriteCollection = document.querySelector('.row');
 var favoritePagination = document.querySelector('.pagination');
-savedFavorites = JSON.parse(localStorage.getItem('favorite'));
+var savedFavorites = JSON.parse(localStorage.getItem('favorite'));
 let current_page = 1;
 let numberOfCards = 6;
 
@@ -23,14 +23,32 @@ function renderFavorites (card, wrapper, cards_per_page, page) {
                         <span class="card-title font-name insideCard"></span>
                         <a class="insideCard" style="font-family:${savedFavorites[i].fontFamily}" href="${savedFavorites[i].fontLink}">Click Here to Download!</a>
                         <p class="insideCard" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</p>
-                        <a class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
+                        <a id='${i}' class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
                         </div>
                     </div>
                 </div>
             </div>
       `)
   }
-};
+
+  //Favorite btn listener
+    if (savedFavorites !== null) {
+      $('.favorite-btn').on('click', function () {
+        M.toast({ html: 'Removed from Favorites' })
+
+        savedFavorites.splice(this.id, 1);
+
+        localStorage.setItem("favorite", JSON.stringify(savedFavorites));
+        
+        setInterval(reloadPage, 1500);
+        
+      })
+    };
+
+    function reloadPage () {
+      document.location.reload();
+    }
+}
 
 // function setUpPagination (cards, wrapper, cards_per_page) {
 //   wrapper.innHTML = "";
@@ -77,22 +95,24 @@ function goToFavoritesPage () {
   window.location.href = "favorite.html"
 };
 
+// Function to go to matchmaker page
+function goToMatchPage () {
+  window.location.href = "draggable.html"
+};
+
 // Function to go to about page
 function goToAboutPage () {
   window.location.href = "about.html"
 };
-
-//Favorite btn listener
-$('.favorite-btn').on('click', function () {
-  M.toast({ html: '❤️!' })
-  
-});
 
 //Go to home page
 document.getElementById('home-page-btn').addEventListener("click", goToHomePage);
 
 //Go to About page
 document.getElementById('about-page-btn').addEventListener("click", goToAboutPage);
+
+//Go to Matchmaker page
+document.getElementById('match-page-btn').addEventListener("click", goToMatchPage);
 
 //Go to favorites page
 document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
