@@ -29,8 +29,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 40%;
-    height: 60%;
+    width: 80%;
+    height: auto;
     padding: auto;
     margin: auto;
     background-color: var(--main-color);
@@ -50,6 +50,7 @@
     padding: 2rem;
     color: var(--text-color);
     font-size: 1.5rem;
+    width: 100%;
 }
 
 .cardButtons {
@@ -81,6 +82,42 @@
     align-items: center;
     width: 100%;
 }
+/* ABOUT US PAGE */
+#aboutPagePicture {
+    background-image: url(../pinkperson.jpg);
+    width: 100%;
+    height: 70vh;
+    background-position: bottom;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    margin: 1rem 0;
+}
+
+.aboutPic {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-size: 1vw;
+    width: 45%;
+    align-items: center;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+
+.aboutContainer {
+    width: 100vw;
+}
+
+.aboutContent {
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+strong {
+    font-weight: 900;
+}
+ 
 
 .resizable {
     font-size: 15px;
@@ -90,4 +127,5 @@
 .draggable :hover {
  cursor: pointer;
 }
+
 
