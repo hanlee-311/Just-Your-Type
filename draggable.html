@@ -13,8 +13,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src= "https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="shortcut icon" type="image/jpg" href="/assets/images/favicon.png"/>
+
+
     <title>Draggable</title>
 </head>
 <body>
@@ -40,21 +43,24 @@
       </ul>
      
 
-      <div class="row ">
+      <div class="row "  >
         <div class="col s12 fontCardContainer valign-wrapper">
             <div class="draggable-font"></div>
 
-          <div class="card hoverable mainFontCard ">
-            <div class="card-content insideCard">
+          <div class="card hoverable mainFontCard" >
+            <div id="capture" class="card-content insideCard droppable" class="ui-widget-header">
               <span class="card-title font-name insideCard" style="font-size:3vw"></span>
               <p class="quote insideCard" style="font-size:2vw"></p>
-           
              </div>
              <div class="card-action insideCard">
                <a class="btn-small cardButtons left-align reset" style="margin:2vw" id="btn-down"><i class="material-icons">clear</i></a>
-               <a class="btn-small cardButtons right-align" style="margin:2vw" id="btn-up"><i class="material-icons ">favorite</i></a>
+               <a onclick="takeshot()" class="btn-small cardButtons right-align" style="margin:2vw" id="btn-up"><i class="material-icons ">camera_alt</i></a>
              </div>
            </div> 
+           
+           <div class = "col-3">
+           <h3>Screenshots:</h3> 
+           <div id="output"></div> 
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
