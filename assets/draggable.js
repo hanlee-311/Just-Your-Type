@@ -39,10 +39,15 @@ $( function() {
   $( ".draggable" ).draggable();
   $( ".droppable" ).droppable({
     drop: function( event, ui ) {
+      // console.log('dropping!', event.target, ui.draggable.context);
+      // manually drop ui.draggable.context into event.target
+      // this way it actually lives there now...  you can html2canvas it!
+      // event.target.appendChild(ui.draggable.context);
+
       $( this )
         .addClass( "ui-state-highlight" )
         .find( "p" )
-          .html( "Dropped!" );
+      //     .html( "Dropped!" );
     }
   });
 } );
@@ -85,8 +90,9 @@ function takeshot() {
           .getElementById('output') 
           .appendChild(canvas); 
       }) 
-} 
+}
 //resizing fonts
+
 
   // $(document).ready(function() {
   //   var resize = new Array('p', '.resizable');
