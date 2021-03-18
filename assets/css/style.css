@@ -138,3 +138,7 @@ strong {
  cursor: pointer;
 }
 
+.draggable-font {
+    z-index: 3;
+}
+

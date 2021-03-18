@@ -36,14 +36,16 @@ function goToHomePage () {
 
 //function to make content draggable
 $( function() {
-    $( ".draggable" ).draggable();
-  } );
-
-// //function to make content resizeable
-//   $( function() {
-//     $( "#resizable" ).resizable();
-//   } );
-  
+  $( ".draggable" ).draggable();
+  $( ".droppable" ).droppable({
+    drop: function( event, ui ) {
+      $( this )
+        .addClass( "ui-state-highlight" )
+        .find( "p" )
+          .html( "Dropped!" );
+    }
+  });
+} );
 
 
 //loop to insert favorite fonts into draggable div
@@ -57,28 +59,55 @@ for (var i = 0; i < savedFavorites.length; i++) {
         `)      
 
   }
+
+
+  $(".draggable").data({
+    'originalLeft': $(".draggable").css('left'),
+    'originalTop': $(".draggable").css('top')
+});
+
+$(".reset").click(function() {
+    $(".draggable").css({
+        'left': $(".draggable").data('originalLeft'),
+        'top': $(".draggable").data('originalTop')
+    });
+});
+
+function takeshot() {
+  console.log('taking screenshot');
+  let div = 
+      document.getElementById('capture'); 
+  console.log('capture element: ', div);
+  html2canvas(div).then( 
+      function (canvas) { 
+        console.log('canvas:', canvas);
+          document 
+          .getElementById('output') 
+          .appendChild(canvas); 
+      }) 
+} 
 //resizing fonts
 
-  $(document).ready(function() {
-    var resize = new Array('p', '.resizable');
-    resize = resize.join(',');
+  // $(document).ready(function() {
+  //   var resize = new Array('p', '.resizable');
+  //   resize = resize.join(',');
 
-    //resets the font size when "reset" is clicked
-    var resetFont = $(resize).css('font-size');
-    $(".reset").click(function() {
-      $(resize).css('font-size', resetFont);
-    });
+  //   //resets the font size when "reset" is clicked
+  //   var resetFont = $(resize).css('font-size');
+  //   $(".reset").click(function() {
+  //     $(resize).css('font-size', resetFont);
+  //   });
 
 
-  //function to increase font size on dbl click
-  $(".insideCard").dblclick(function() {
-      console.log("click");
-    var originalFontSize = $(resize).css('font-size');
-    var originalFontNumber = parseFloat(originalFontSize, 10);
-    var newFontSize = originalFontNumber * 1.2;
-    $(resize).css('font-size', newFontSize);
-    return false;
-  });
+  // //function to increase font size on dbl click
+  // $(".insideCard").dblclick(function() {
+  //     console.log("click");
+  //   var originalFontSize = $(resize).css('font-size');
+  //   var originalFontNumber = parseFloat(originalFontSize, 10);
+  //   var newFontSize = originalFontNumber * 1.2;
+  //   $(resize).css('font-size', newFontSize);
+  //   return false;
+  // });
 
 //   //function to decrease font siz on single click
 //   $(".insideCard").click(function() {
@@ -90,6 +119,5 @@ for (var i = 0; i < savedFavorites.length; i++) {
 //     $(resize).css('font-size', newFontSize);
 //     return false;
 //   });
-});
 
   
