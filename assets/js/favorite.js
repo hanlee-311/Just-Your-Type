@@ -23,36 +23,36 @@ function renderFavorites (card, cards_per_page, page) {
     $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + paginatedItems[i].fontFamily + "' rel='stylesheet'>");
 
       favoriteCollectionOne.insertAdjacentHTML("beforeend", `
-            <div class="col s4">
-                <div class="container fontCardContainerFavorite">
-                  <div class="card hoverable mainFontCardFavorite">
-                      <div class="card-content insideCard">
-                        <span class="card-title font-name insideCard"></span>
-                        <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click Here to Download!</a>
-                        <p class="insideCard" style="font-family:${paginatedItems[i].fontFamily}">${paginatedItems[i].fontFamily}</p>
-                        <a id='${i}' class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
-                        </div>
-                    </div>
-                </div>
+      <div class="row col s12 m6 l4">
+        <div class="container fontCardContainerFavorite">
+          <div class="card hoverable mainFontCardFavorite">
+            <div class="card-content insideCard">
+              <span class="card-title font-name insideCard"></span>
+              <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click Here to Download!</a>
+              <p class="insideCard" style="font-family:${paginatedItems[i].fontFamily}">${paginatedItems[i].fontFamily}</p>
+              <a id='${i}' class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
+              </div>
             </div>
+          </div>
+        </div>
       `)
     } else {
 
       $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + paginatedItems[i].fontFamily + "' rel='stylesheet'>");
 
       favoriteCollectionTwo.insertAdjacentHTML("beforeend", `
-            <div class="col s4">
-                <div class="container fontCardContainerFavorite">
-                  <div class="card hoverable mainFontCardFavorite">
-                      <div class="card-content insideCard">
-                        <span class="card-title font-name insideCard"></span>
-                        <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click Here to Download!</a>
-                        <p class="insideCard" style="font-family:${paginatedItems[i].fontFamily}">${paginatedItems[i].fontFamily}</p>
-                        <a id='${i}' class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
-                        </div>
-                    </div>
-                </div>
+        <div class="row col s12 m6 l4">
+            <div class="container fontCardContainerFavorite">
+              <div class="card hoverable mainFontCardFavorite">
+                  <div class="card-content insideCard">
+                    <span class="card-title font-name insideCard"></span>
+                    <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click Here to Download!</a>
+                    <p class="insideCard" style="font-family:${paginatedItems[i].fontFamily}">${paginatedItems[i].fontFamily}</p>
+                    <a id='${i}' class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
+                  </div>
+              </div>
             </div>
+        </div>
       `)
     }
   }
