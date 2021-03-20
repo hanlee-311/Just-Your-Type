@@ -15,8 +15,6 @@ function renderFavorites (card, cards_per_page, page) {
   let end = start + cards_per_page;
   let paginatedItems = card.slice(start, end);
 
-  console.log(paginatedItems)
-
   //Creating the favorite cards
   for (var i = 0; i < paginatedItems.length; i++) {
 
@@ -94,8 +92,6 @@ function PaginationButton (page, cards) {
 
   button.setAttribute('style', 'margin: 15px');
   button.setAttribute('class' , 'waves-effect');
-
-  // if (current_page == page) button.classList.add('active');
 
   button.addEventListener('click', function () {
     current_page = page;
