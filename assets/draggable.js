@@ -47,7 +47,6 @@ $( function() {
   });
 } );
 
-
 //loop to insert favorite fonts into draggable div
 for (var i = 0; i < savedFavorites.length; i++) {
     $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + savedFavorites[i].fontFamily + "' rel='stylesheet'>");
@@ -120,4 +119,8 @@ function takeshot() {
 //     return false;
 //   });
 
-  
+// Side Navigation Bar
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, {});
+});
