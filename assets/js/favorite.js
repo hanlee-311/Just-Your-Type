@@ -29,7 +29,7 @@ function renderFavorites (card, cards_per_page, page) {
           <div class="card hoverable mainFontCardFavorite">
             <div class="card-content insideCard">
               <span class="card-title font-name insideCard"></span>
-              <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click Here to Download!</a>
+              <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click to Download!</a>
               <p class="insideCard" style="font-family:${paginatedItems[i].fontFamily}">${paginatedItems[i].fontFamily}</p>
               <a id='${i}' class="btn-floating favorite-btn tooltipped" data-position="right" data-tooltip="Click to remove"><i class="material-icons">close</i></a>
               </div>
@@ -47,7 +47,7 @@ function renderFavorites (card, cards_per_page, page) {
               <div class="card hoverable mainFontCardFavorite">
                   <div class="card-content insideCard">
                     <span class="card-title font-name insideCard"></span>
-                    <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click Here to Download!</a>
+                    <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click to Download!</a>
                     <p class="insideCard" style="font-family:${paginatedItems[i].fontFamily}">${paginatedItems[i].fontFamily}</p>
                     <a id='${i}' class="btn-floating favorite-btn tooltipped" data-position="right" data-tooltip="Click to remove"><i class="material-icons">close</i></a>
                   </div>
@@ -126,7 +126,7 @@ function goToFavoritesPage () {
 
 // Function to go to matchmaker page
 function goToMatchPage () {
-  window.location.href = "draggable.html"
+  window.location.href = "matchmaker.html"
 };
 
 // Function to go to about page
