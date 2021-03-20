@@ -13,7 +13,7 @@ function goToHomePage () {
 
 // Function to go to matchmaker page
 function goToMatchPage () {
-  window.location.href = "draggable.html"
+  window.location.href = "matchmaker.html"
 };
 
 // Function to go to favorites page

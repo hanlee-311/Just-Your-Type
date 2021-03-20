@@ -135,7 +135,7 @@ function goToAboutPage () {
 
 // Function to go to matchmaker page
 function goToMatchPage () {
-    window.location.href = "draggable.html"
+    window.location.href = "matchmaker.html"
   };
 
 // Function to render a new font and quote combo on each click
