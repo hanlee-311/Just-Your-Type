@@ -28,6 +28,7 @@ window.location.href = "about.html"
 
 //Go to home page
 document.getElementById('home-page-btn').addEventListener("click", goToHomePage);
+document.querySelector('.logo').addEventListener('click', goToHomePage);
 
 //Go to Matchmaker page
 document.getElementById('match-page-btn').addEventListener("click", goToMatchPage);

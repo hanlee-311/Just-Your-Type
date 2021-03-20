@@ -136,6 +136,7 @@ function goToAboutPage () {
 
 //Go to home page
 document.getElementById('home-page-btn').addEventListener("click", goToHomePage);
+document.querySelector('.logo').addEventListener('click', goToHomePage);
 
 //Go to About page
 document.getElementById('about-page-btn').addEventListener("click", goToAboutPage);

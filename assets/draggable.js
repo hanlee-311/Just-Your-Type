@@ -24,6 +24,7 @@ window.location.href = "about.html"
 
 //Go to home page
 document.getElementById('home-page-btn').addEventListener("click", goToHomePage);
+document.querySelector('.logo').addEventListener('click', goToHomePage);
 
 //Go to Matchmaker page
 document.getElementById('match-page-btn').addEventListener("click", goToMatchPage);
@@ -118,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.sidenav');
   var instances = M.Sidenav.init(elems, {});
 });
-}
+
 
   //function to increase font size on dbl click-- not functioning properly yet
   $(".insideCard").dblclick(function() {
