@@ -35,28 +35,18 @@ document.getElementById('about-page-btn').addEventListener("click", goToAboutPag
 document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
 
 
-
 //function to make content draggable
 $( function() {
   $( ".draggable" ).draggable();
-  $( ".droppable" ).droppable({
-
-    drop: function( event, ui ) {
-      $( this )
-        .addClass( "ui-state-highlight" )
-        .find( "p" )
-          .html( "Dropped!" );
-    }
-  });
-} );
-
+    });
+  
 
 //loop to insert favorite fonts into draggable div
 for (var i = 0; i < savedFavorites.length; i++) {
     $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + savedFavorites[i].fontFamily + "' rel='stylesheet'>");
 
       draggableFonts.insertAdjacentHTML("beforeend", `
-      <div class="draggable" class="ui-widget-content">
+      <div class="draggable" class="ui-widget-content" id ="contenteditable">
         <div class ="column" class="insideCard" class="resizable" class="ui-widget-header" class="increase" class= "decrease" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</p>
       </div>
         `);      
@@ -76,7 +66,7 @@ $(".reset").click(function() {
 });
 
 //function to capture matched pair-- not functioning properly yet
-function takeshot() {
+function takeShot() {
   console.log('taking screenshot');
   let div = 
       document.getElementById('capture'); 
