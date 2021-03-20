@@ -2,86 +2,6 @@ var draggableFonts = document.querySelector(".draggable-font");
 var savedFavorites = JSON.parse(localStorage.getItem('favorite'));
 
 
-
-
-//function to make content draggable
-$( function() {
-  $( ".draggable" ).draggable();
-  $( ".droppable" ).droppable({
-    // drop: function( event, ui ) {
-      // console.log('dropping!', event.target, ui.draggable.context);
-      // // manually drop ui.draggable.context into event.target
-      // // this way it actually lives there now...  you can html2canvas it!
-      // event.target.appendChild(ui.draggable.context);
-
-
-      // $( this )
-      //   .addClass( "ui-state-highlight" )
-      //   .find( "p" )
-      //     .html( "Dropped!" );
-    
-  });
- 
-});
-
-
-//loop to insert favorite fonts into draggable div
-for (var i = 0; i < savedFavorites.length; i++) {
-    $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + savedFavorites[i].fontFamily + "' rel='stylesheet'>");
-
-      draggableFonts.insertAdjacentHTML("beforeend", `
-      <div class="draggable" class="ui-widget-content">
-        <div class ="column" class="insideCard" class="resizable" class="ui-widget-header" class="increase" class= "decrease" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</p>
-      </div>
-        `)      
-
-  }
-
-
-  $(".draggable").data({
-    'originalLeft': $(".draggable").css('left'),
-    'originalTop': $(".draggable").css('top')
-});
-
-$(".reset").click(function() {
-    $(".draggable").css({
-        'left': $(".draggable").data('originalLeft'),
-        'top': $(".draggable").data('originalTop')
-    });
-});
-
-function takeshot() {
-  console.log('taking screenshot');
-  let div = 
-      document.getElementById('capture'); 
-  console.log('capture element: ', div);
-  html2canvas(div).then( 
-      function (canvas) { 
-        console.log('canvas:', canvas);
-          document 
-          .getElementById('output') 
-          .appendChild(canvas); 
-      }) 
-}
-
-// function saveMatch(){
-
-//   if (!localStorage.getItem("match")){
-//     var matchArray=[];
-//     localStorage.setItem("match", JSON.stringify(matchArray))
-//   }
-  
-//   var storedMatches = JSON.parse(localStorage.getItem("match"));
-  
-//   storedMatches.push(matchInfo);
-  
-//   localStorage.setItem("match", JSON.stringify(storedMatches));
-  
-//   console.log(storedMatches);
-
-// }
-
-
 // Function to go to home page
 function goToHomePage () {
   window.location.href = "index.html"
@@ -116,21 +36,52 @@ document.getElementById('favorite-page-btn').addEventListener("click", goToFavor
 
 
 
+//function to make content draggable
+$( function() {
+  $( ".draggable" ).draggable();
+  $( ".droppable" ).droppable({
+ 
+});
+});
 
+//loop to insert favorite fonts into draggable div
+for (var i = 0; i < savedFavorites.length; i++) {
+    $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + savedFavorites[i].fontFamily + "' rel='stylesheet'>");
 
-//resizing fonts
+      draggableFonts.insertAdjacentHTML("beforeend", `
+      <div class="draggable" class="ui-widget-content">
+        <div class ="column" class="insideCard" class="resizable" class="ui-widget-header" class="increase" class= "decrease" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</p>
+      </div>
+        `);      
+  }
 
+  //functions to reset to original position
+  $(".draggable").data({
+    'originalLeft': $(".draggable").css('left'),
+    'originalTop': $(".draggable").css('top')
+});
 
-  // $(document).ready(function() {
-  //   var resize = new Array('p', '.resizable');
-  //   resize = resize.join(',');
+$(".reset").click(function() {
+    $(".draggable").css({
+        'left': $(".draggable").data('originalLeft'),
+        'top': $(".draggable").data('originalTop')
+    });
+});
 
-  //   //resets the font size when "reset" is clicked
-  //   var resetFont = $(resize).css('font-size');
-  //   $(".reset").click(function() {
-  //     $(resize).css('font-size', resetFont);
-  //   });
-
+//function to capture mathced pair-- not functioning properly yet
+function takeshot() {
+  console.log('taking screenshot');
+  let div = 
+      document.getElementById('capture'); 
+  console.log('capture element: ', div);
+  html2canvas(div).then( 
+      function (canvas) { 
+        console.log('canvas:', canvas);
+          document 
+          .getElementById('output') 
+          .appendChild(canvas); 
+      }) 
+}
 
   //function to increase font size on dbl click
   $(".insideCard").dblclick(function() {
@@ -141,16 +92,3 @@ document.getElementById('favorite-page-btn').addEventListener("click", goToFavor
     $(resize).css('font-size', newFontSize);
     return false;
   });
-
-//   //function to decrease font siz on single click
-//   $(".insideCard").click(function() {
-//     console.log("click");
-
-//     var originalFontSize = $(resize).css('font-size');
-//     var originalFontNumber = parseFloat(originalFontSize, 10);
-//     var newFontSize = originalFontNumber * 0.8;
-//     $(resize).css('font-size', newFontSize);
-//     return false;
-//   });
-
-  
