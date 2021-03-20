@@ -31,7 +31,7 @@ function renderFavorites (card, cards_per_page, page) {
               <span class="card-title font-name insideCard"></span>
               <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click Here to Download!</a>
               <p class="insideCard" style="font-family:${paginatedItems[i].fontFamily}">${paginatedItems[i].fontFamily}</p>
-              <a id='${i}' class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
+              <a id='${i}' class="btn-floating favorite-btn tooltipped" data-position="right" data-tooltip="Click to remove"><i class="material-icons">close</i></a>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@ function renderFavorites (card, cards_per_page, page) {
                     <span class="card-title font-name insideCard"></span>
                     <a class="insideCard" style="font-family:${paginatedItems[i].fontFamily}" href="${paginatedItems[i].fontLink}">Click Here to Download!</a>
                     <p class="insideCard" style="font-family:${paginatedItems[i].fontFamily}">${paginatedItems[i].fontFamily}</p>
-                    <a id='${i}' class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
+                    <a id='${i}' class="btn-floating favorite-btn tooltipped" data-position="right" data-tooltip="Click to remove"><i class="material-icons">close</i></a>
                   </div>
               </div>
             </div>
@@ -72,6 +72,12 @@ function renderFavorites (card, cards_per_page, page) {
       })
     };
 }
+
+//Tooltip function
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.tooltipped');
+  var instances = M.Tooltip.init(elems, []);
+});
 
 function reloadPage () {
   document.location.reload();
@@ -96,6 +102,7 @@ function PaginationButton (page, cards) {
 
   button.addEventListener('click', function () {
     current_page = page;
+
     renderFavorites(cards, numberOfCards, current_page);
 
     let start = cards_per_page * page;
