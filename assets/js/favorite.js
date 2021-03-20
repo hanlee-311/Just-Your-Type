@@ -18,17 +18,16 @@ function renderFavorites (card, wrapper, cards_per_page, page) {
     $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + paginatedItems[i].fontFamily + "' rel='stylesheet'>");
 
       favoriteCollection.insertAdjacentHTML("beforeend", `
-            <div class="col s4">
-                
+      <div class="row col s12 m6 l4">
                   <div class="card hoverable mainFontCardFavorite">
                       <div class="card-content insideCard">
-                        <span class="card-title insideCard" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</span>
+                        <span class="card-title" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</span>
                         <a class="insideCard" style="font-family:${savedFavorites[i].fontFamily}" href="${savedFavorites[i].fontLink}">Click Here to Download!</a>
                         <a id='${i}' class="btn-floating favorite-btn"><i class="material-icons">favorite</i></a>
                         </div>
                     </div>
                 </div>
-            </div>
+          </div>
       `)
   }
 

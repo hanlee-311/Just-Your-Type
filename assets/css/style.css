@@ -21,6 +21,7 @@
     font-size: 1.5rem;
 }
 
+
 #hamburgerMenu {
     color: var(--text-color);
 }
@@ -44,7 +45,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .insideCard {
     padding: 2rem;
@@ -155,7 +155,7 @@ strong {
     z-index: 3;
 }
 
-@media only screen and (max-width: 1267px) {
+@media only screen and (max-width: 1268px) {
     .navText { 
         display: none;
     }
