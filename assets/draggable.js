@@ -68,7 +68,7 @@ $(".reset").click(function() {
     });
 });
 
-//function to capture mathced pair-- not functioning properly yet
+//function to capture matched pair-- not functioning properly yet
 function takeshot() {
   console.log('taking screenshot');
   let div = 
@@ -83,7 +83,7 @@ function takeshot() {
       }) 
 }
 
-  //function to increase font size on dbl click
+  //function to increase font size on dbl click-- not functioning properly yet
   $(".insideCard").dblclick(function() {
       console.log("click");
     var originalFontSize = $(resize).css('font-size');
