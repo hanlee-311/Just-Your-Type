@@ -45,10 +45,10 @@ function renderFavorites (card, wrapper, cards_per_page, page) {
         
       })
     };
+}
 
-    function reloadPage () {
-      document.location.reload();
-    }
+function reloadPage () {
+  document.location.reload();
 }
 
 function setUpPagination (cards, wrapper, cards_per_page) {
@@ -65,21 +65,23 @@ function PaginationButton (page, cards) {
   let button = document.createElement('li');
   button.innerText = page;
 
-  if (current_page == page) button.classList.add('active');
+  button.setAttribute('style', 'margin: 15px');
+  button.setAttribute('class' , 'waves-effect');
+
+  // if (current_page == page) button.classList.add('active');
 
   button.addEventListener('click', function () {
     current_page = page;
     renderFavorites(cards, favoriteCollection, numberOfCards, current_page);
 
-    let start = cards_per_page * page;
-    let end = start + cards_per_page;
-    let paginatedItems = cards.slice(start, end);
+    // let start = cards_per_page * page;
+    // let end = start + cards_per_page;
+    // let paginatedItems = cards.slice(start, end);
   
   })
 
   return button;
 }
-
 
 // Function to go to home page
 function goToHomePage () {

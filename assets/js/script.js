@@ -13,7 +13,18 @@ var usedFonts= []
 
 
 //Fetch information from Google fonts API and stores in variable
-fetch(fontAPI)
+//Fetch information from Quote Garden API and store in variable
+function pageLoad (){
+    fetch(quoteAPI)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        quoteData = data;
+        renderNewQuote();
+    });
+
+    fetch(fontAPI)
     .then(function (response) {
         return response.json();
     })
@@ -23,7 +34,9 @@ fetch(fontAPI)
         renderNewFont ();
     });
 
-    //function to choose non-repeating random number
+}
+
+//function to choose non-repeating random number
     function chooseNumber(){
             
         var num = Math.floor(Math.random() * 100); 
@@ -45,7 +58,7 @@ fetch(fontAPI)
         var item = chooseNumber();
 
         console.log(item);
-    
+        
         
         console.log(fontData);
         // link to download
@@ -71,45 +84,32 @@ fetch(fontAPI)
 
     };
 
-//Fetch information from Quote Garden API and store in variable
-fetch(quoteAPI)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        quoteData = data;
-        renderNewQuote();
-    });
-
 //function to randomly apply new quote to card elements
 function renderNewQuote() {
 
-        var item = Math.floor(Math.random() * 10); 
-        console.log(item);
+    var item = Math.floor(Math.random() * 10); 
+    console.log(item);
 
-        console.log(quoteData);
+    console.log(quoteData);
 
-        // quote
-        console.log(quoteData.data[item].quoteText);
-        //author
-        console.log(quoteData.data[item].quoteAuthor);
+    // quote
+    console.log(quoteData.data[item].quoteText);
+    //author
+    console.log(quoteData.data[item].quoteAuthor);
 
-        displayQuote(quoteData.data[item].quoteText, quoteData.data[item].quoteAuthor)
-
-        quoteAuthor = quoteData.data[item].quoteAuthor;
-        quoteText = quoteData.data[item].quoteText;
-        quoteInfo = quoteText + " -" + quoteAuthor;
+    displayQuote(quoteData.data[item].quoteText, quoteData.data[item].quoteAuthor)
 
 };
 
-//displays font name and category to card--- need to add randomizer
+
+//displays font name and category to card
 function displayFont(fontFamily, fontCategory) {
 
     fontNameDisplay.textContent = fontFamily + ", " + fontCategory;
 
 }
 
-//displays quote to card--- need to add randomizer
+//displays quote to card
 function displayQuote(quoteText, quoteAuthor) {
 
     quoteDisplayEl.textContent = '"' + quoteText + '"' + " -" + quoteAuthor;
@@ -187,11 +187,7 @@ document.getElementById('btn-down').addEventListener("click", renderNew);
 
 document.getElementById('btn-up').addEventListener("click", renderNewSave);
 
-displayFont();
-displayQuote();
-
 // Sidebar Navigation
-
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
@@ -200,6 +196,4 @@ document.addEventListener('DOMContentLoaded', function() {
 var collapsibleElem = document.querySelector('.collapsible');
 var collapsibleInstance = M.Collapsible.init(collapsibleElem);
 
-// $(document).ready(function(){
-//     $('.sidenav').sidenav();
-//   });
+pageLoad();

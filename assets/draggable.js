@@ -2,55 +2,27 @@ var draggableFonts = document.querySelector(".draggable-font");
 var savedFavorites = JSON.parse(localStorage.getItem('favorite'));
 
 
-// Function to go to home page
-function goToHomePage () {
-    window.location.href = "index.html"
-  };
-  
-  // Function to go to matchmaker page
-  function goToMatchPage () {
-    window.location.href = "draggable.html"
-  };
-  
-  // Function to go to favorites page
-  function goToFavoritesPage () {
-  window.location.href = "favorite.html"
-  };
-  
-  // Function to go to about page
-  function goToAboutPage () {
-  window.location.href = "about.html"
-  };
-  
-  //Go to home page
-  document.getElementById('home-page-btn').addEventListener("click", goToHomePage);
-  
-  //Go to Matchmaker page
-  document.getElementById('match-page-btn').addEventListener("click", goToMatchPage);
-  
-  //Go to About page
-  document.getElementById('about-page-btn').addEventListener("click", goToAboutPage);
-  
-  //Go to favorites page
-  document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
+
 
 //function to make content draggable
 $( function() {
   $( ".draggable" ).draggable();
   $( ".droppable" ).droppable({
-    drop: function( event, ui ) {
+    // drop: function( event, ui ) {
       // console.log('dropping!', event.target, ui.draggable.context);
-      // manually drop ui.draggable.context into event.target
-      // this way it actually lives there now...  you can html2canvas it!
+      // // manually drop ui.draggable.context into event.target
+      // // this way it actually lives there now...  you can html2canvas it!
       // event.target.appendChild(ui.draggable.context);
 
-      $( this )
-        .addClass( "ui-state-highlight" )
-        .find( "p" )
+
+      // $( this )
+      //   .addClass( "ui-state-highlight" )
+      //   .find( "p" )
       //     .html( "Dropped!" );
-    }
+    
   });
-} );
+ 
+});
 
 
 //loop to insert favorite fonts into draggable div
@@ -59,7 +31,7 @@ for (var i = 0; i < savedFavorites.length; i++) {
 
       draggableFonts.insertAdjacentHTML("beforeend", `
       <div class="draggable" class="ui-widget-content">
-        <p class="insideCard" class="resizable" class="ui-widget-header" class="increase" class= "decrease" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</p>
+        <div class ="column" class="insideCard" class="resizable" class="ui-widget-header" class="increase" class= "decrease" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</p>
       </div>
         `)      
 
@@ -91,6 +63,61 @@ function takeshot() {
           .appendChild(canvas); 
       }) 
 }
+
+// function saveMatch(){
+
+//   if (!localStorage.getItem("match")){
+//     var matchArray=[];
+//     localStorage.setItem("match", JSON.stringify(matchArray))
+//   }
+  
+//   var storedMatches = JSON.parse(localStorage.getItem("match"));
+  
+//   storedMatches.push(matchInfo);
+  
+//   localStorage.setItem("match", JSON.stringify(storedMatches));
+  
+//   console.log(storedMatches);
+
+// }
+
+
+// Function to go to home page
+function goToHomePage () {
+  window.location.href = "index.html"
+};
+
+// Function to go to matchmaker page
+function goToMatchPage () {
+  window.location.href = "draggable.html"
+};
+
+// Function to go to favorites page
+function goToFavoritesPage () {
+window.location.href = "favorite.html"
+};
+
+// Function to go to about page
+function goToAboutPage () {
+window.location.href = "about.html"
+};
+
+//Go to home page
+document.getElementById('home-page-btn').addEventListener("click", goToHomePage);
+
+//Go to Matchmaker page
+document.getElementById('match-page-btn').addEventListener("click", goToMatchPage);
+
+//Go to About page
+document.getElementById('about-page-btn').addEventListener("click", goToAboutPage);
+
+//Go to favorites page
+document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
+
+
+
+
+
 //resizing fonts
 
 
@@ -105,15 +132,15 @@ function takeshot() {
   //   });
 
 
-  // //function to increase font size on dbl click
-  // $(".insideCard").dblclick(function() {
-  //     console.log("click");
-  //   var originalFontSize = $(resize).css('font-size');
-  //   var originalFontNumber = parseFloat(originalFontSize, 10);
-  //   var newFontSize = originalFontNumber * 1.2;
-  //   $(resize).css('font-size', newFontSize);
-  //   return false;
-  // });
+  //function to increase font size on dbl click
+  $(".insideCard").dblclick(function() {
+      console.log("click");
+    var originalFontSize = $(resize).css('font-size');
+    var originalFontNumber = parseFloat(originalFontSize, 10);
+    var newFontSize = originalFontNumber * 1.2;
+    $(resize).css('font-size', newFontSize);
+    return false;
+  });
 
 //   //function to decrease font siz on single click
 //   $(".insideCard").click(function() {
