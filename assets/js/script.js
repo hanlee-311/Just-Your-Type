@@ -45,6 +45,7 @@ fetch(fontAPI)
         var item = chooseNumber();
 
         console.log(item);
+    
         
         console.log(fontData);
         // link to download
@@ -87,6 +88,7 @@ function renderNewQuote() {
         console.log(item);
 
         console.log(quoteData);
+
         // quote
         console.log(quoteData.data[item].quoteText);
         //author
