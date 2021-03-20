@@ -22,6 +22,7 @@ function renderFavorites (card, cards_per_page, page) {
 
     $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + paginatedItems[i].fontFamily + "' rel='stylesheet'>");
 
+
       favoriteCollectionOne.insertAdjacentHTML("beforeend", `
       <div class="row col s12 m6 l4">
         <div class="container fontCardContainerFavorite">
