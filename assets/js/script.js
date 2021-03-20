@@ -117,10 +117,10 @@ function displayQuote(quoteText, quoteAuthor) {
 
 //Function to save information
 function saveFont() {
-    M.toast({ html: '❤️!' })
+    M.toast({ html: '❤️' })
 };
 function newFont() {
-    M.toast({ html: '💩!' })
+    M.toast({ html: '❌' })
 };
 
 // Function to go to favorites page

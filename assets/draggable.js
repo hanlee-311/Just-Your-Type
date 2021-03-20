@@ -38,9 +38,8 @@ document.getElementById('favorite-page-btn').addEventListener("click", goToFavor
 //function to make content draggable
 $( function() {
   $( ".draggable" ).draggable();
- 
-});
-
+    });
+  
 
 //loop to insert favorite fonts into draggable div
 for (var i = 0; i < savedFavorites.length; i++) {
@@ -79,6 +78,46 @@ function takeShot() {
           .getElementById('output') 
           .appendChild(canvas); 
       }) 
+} 
+//resizing fonts
+
+  // $(document).ready(function() {
+  //   var resize = new Array('p', '.resizable');
+  //   resize = resize.join(',');
+
+  //   //resets the font size when "reset" is clicked
+  //   var resetFont = $(resize).css('font-size');
+  //   $(".reset").click(function() {
+  //     $(resize).css('font-size', resetFont);
+  //   });
+
+
+  // //function to increase font size on dbl click
+  // $(".insideCard").dblclick(function() {
+  //     console.log("click");
+  //   var originalFontSize = $(resize).css('font-size');
+  //   var originalFontNumber = parseFloat(originalFontSize, 10);
+  //   var newFontSize = originalFontNumber * 1.2;
+  //   $(resize).css('font-size', newFontSize);
+  //   return false;
+  // });
+
+//   //function to decrease font siz on single click
+//   $(".insideCard").click(function() {
+//     console.log("click");
+
+//     var originalFontSize = $(resize).css('font-size');
+//     var originalFontNumber = parseFloat(originalFontSize, 10);
+//     var newFontSize = originalFontNumber * 0.8;
+//     $(resize).css('font-size', newFontSize);
+//     return false;
+//   });
+
+// Side Navigation Bar
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, {});
+});
 }
 
   //function to increase font size on dbl click-- not functioning properly yet
