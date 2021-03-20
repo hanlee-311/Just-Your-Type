@@ -142,3 +142,12 @@ strong {
     z-index: 3;
 }
 
+@media only screen and (max-width: 1267px) {
+    .navText { 
+        display: none;
+    }
+    .sidenav-trigger {
+        display:block !important;; 
+    }
+}
+
