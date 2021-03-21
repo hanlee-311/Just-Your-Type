@@ -1,6 +1,12 @@
 var draggableFonts = document.querySelector(".draggable-font");
 var savedFavorites = JSON.parse(localStorage.getItem('favorite'));
 
+// Side Navigation Bar
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, {});
+});
+
 // Function to go to home page
 function goToHomePage () {
   window.location.href = "index.html"
@@ -109,11 +115,7 @@ function takeShot() {
 //     return false;
 //   });
 
-// Side Navigation Bar
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.sidenav');
-  var instances = M.Sidenav.init(elems, {});
-});
+
 
   //function to increase font size on dbl click-- not functioning properly yet
   $(".insideCard").dblclick(function() {
