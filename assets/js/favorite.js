@@ -11,17 +11,17 @@ function renderFavorites (card, cards_per_page, page) {
   favoriteCollectionTwo.innerHTML = "";
   page--;
 
+  if (savedFavorites !== null) {
   let start = cards_per_page * page;
   let end = start + cards_per_page;
   let paginatedItems = card.slice(start, end);
-
+  
   //Creating the favorite cards
   for (var i = 0; i < paginatedItems.length; i++) {
 
     if (i === 0 || i === 1 || i === 2) { 
 
     $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + paginatedItems[i].fontFamily + "' rel='stylesheet'>");
-
 
       favoriteCollectionOne.insertAdjacentHTML("beforeend", `
       <div class="row col s12 m6 l4">
@@ -71,6 +71,7 @@ function renderFavorites (card, cards_per_page, page) {
         
       })
     };
+  }
 }
 
 //Tooltip function
@@ -79,20 +80,24 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Tooltip.init(elems, []);
 });
 
+//Reloads page when user removes a favorite font
 function reloadPage () {
   document.location.reload();
 }
 
+//Sets up pagination based on length of user's saved fonts
 function setUpPagination (cards, wrapper, cards_per_page) {
   wrapper.innerHTML = "";
 
+  if (savedFavorites !== null) {
   let page_count = Math.ceil(cards.length / cards_per_page);
   for (let i = 1; i < page_count + 1; i++) {
     let btn = PaginationButton(i, cards);
     wrapper.appendChild(btn);
   }
-}
+}}
 
+//Creates pagination buttons
 function PaginationButton (page, cards) {
   let button = document.createElement('li');
   button.innerText = page;
@@ -113,18 +118,16 @@ function PaginationButton (page, cards) {
     }
 
     current_page = page;
-
     renderFavorites(cards, numberOfCards, current_page);
 
     if (this.innerText == page) {
       this.setAttribute('class', 'active selector');
     }
-
   })
-
   return button;
 }
 
+//Highlightes the first page in pagination
 function firstPage (page, button) {
   if (page == 1) {
     button.setAttribute('class', 'active selector');
@@ -164,9 +167,6 @@ document.getElementById('match-page-btn').addEventListener("click", goToMatchPag
 //Go to favorites page
 document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
 
-renderFavorites(savedFavorites, numberOfCards, current_page);
-setUpPagination(savedFavorites, favoritePagination, numberOfCards);
-
 // Sidebar Nav
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.sidenav');
@@ -175,3 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var collapsibleElem = document.querySelector('.collapsible');
 var collapsibleInstance = M.Collapsible.init(collapsibleElem);
+
+renderFavorites(savedFavorites, numberOfCards, current_page);
+setUpPagination(savedFavorites, favoritePagination, numberOfCards);

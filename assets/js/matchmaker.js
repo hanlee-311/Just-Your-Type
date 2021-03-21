@@ -1,7 +1,6 @@
 var draggableFonts = document.querySelector(".draggable-font");
 var savedFavorites = JSON.parse(localStorage.getItem('favorite'));
 
-
 // Function to go to home page
 function goToHomePage () {
   window.location.href = "index.html"
@@ -35,13 +34,12 @@ document.getElementById('about-page-btn').addEventListener("click", goToAboutPag
 //Go to favorites page
 document.getElementById('favorite-page-btn').addEventListener("click", goToFavoritesPage);
 
-
 //function to make content draggable
 $( function() {
   $( ".draggable" ).draggable();
-    });
+  }
+);
   
-
 //loop to insert favorite fonts into draggable div
 for (var i = 0; i < savedFavorites.length; i++) {
     $("head").append("<link href='https://fonts.googleapis.com/css2?family=" + savedFavorites[i].fontFamily + "' rel='stylesheet'>");
@@ -50,10 +48,10 @@ for (var i = 0; i < savedFavorites.length; i++) {
       <div class="draggable" class="ui-widget-content" id ="contenteditable">
         <div class ="column" class="insideCard" class="resizable" class="ui-widget-header" class="increase" class= "decrease" style="font-family:${savedFavorites[i].fontFamily}">${savedFavorites[i].fontFamily}</p>
       </div>
-        `);      
-  }
+    `);      
+}
 
-  //functions to reset to original position
+//functions to reset to original position
   $(".draggable").data({
     'originalLeft': $(".draggable").css('left'),
     'originalTop': $(".draggable").css('top')
@@ -68,20 +66,19 @@ $(".reset").click(function() {
 
 //function to capture matched pair-- not functioning properly yet
 function takeShot() {
-  console.log('taking screenshot');
   let div = 
       document.getElementById('capture'); 
-  console.log('capture element: ', div);
-  html2canvas(div).then( 
+      html2canvas(div).then( 
       function (canvas) { 
-        console.log('canvas:', canvas);
           document 
           .getElementById('output') 
           .appendChild(canvas); 
       }) 
 } 
-//resizing fonts
 
+//This section is currently in BETA and is commented out for the current version of the application to work
+
+//resizing fonts
   // $(document).ready(function() {
   //   var resize = new Array('p', '.resizable');
   //   resize = resize.join(',');
@@ -95,7 +92,6 @@ function takeShot() {
 
   // //function to increase font size on dbl click
   // $(".insideCard").dblclick(function() {
-  //     console.log("click");
   //   var originalFontSize = $(resize).css('font-size');
   //   var originalFontNumber = parseFloat(originalFontSize, 10);
   //   var newFontSize = originalFontNumber * 1.2;
@@ -105,7 +101,6 @@ function takeShot() {
 
 //   //function to decrease font siz on single click
 //   $(".insideCard").click(function() {
-//     console.log("click");
 
 //     var originalFontSize = $(resize).css('font-size');
 //     var originalFontNumber = parseFloat(originalFontSize, 10);
@@ -120,10 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Sidenav.init(elems, {});
 });
 
-
   //function to increase font size on dbl click-- not functioning properly yet
   $(".insideCard").dblclick(function() {
-      console.log("click");
     var originalFontSize = $(resize).css('font-size');
     var originalFontNumber = parseFloat(originalFontSize, 10);
     var newFontSize = originalFontNumber * 1.2;

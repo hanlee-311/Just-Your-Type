@@ -1,4 +1,3 @@
-
 var pageNum = Math.floor(Math.random() * 10); 
 var quoteAPI = 'https://quote-garden.herokuapp.com/api/v3/quotes?genre=love&page=' + pageNum
 var fontAPI = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=AIzaSyApTTfxzWtDTJAFO8DS8W5vBBqqPCCKmUs'
@@ -10,7 +9,6 @@ var quoteData
 var currentFontFamily
 var currentFontLink
 var usedFonts= []
-
 
 //Fetch information from Google fonts API and stores in variable
 //Fetch information from Quote Garden API and store in variable
@@ -29,11 +27,9 @@ function pageLoad (){
         return response.json();
     })
     .then(function (data) {
-
         fontData = data;
         renderNewFont ();
     });
-
 }
 
 //function to choose non-repeating random number
@@ -45,31 +41,16 @@ function pageLoad (){
             chooseNumber();
         } else { 
             usedFonts.push(num);
-            console.log(usedFonts);
             return num;
         }
     }
 
-
-
 //function to randomly apply new font to card elements
-     function renderNewFont () {
+    function renderNewFont () {
          
         var item = chooseNumber();
 
-        console.log(item);
-        
-        
-        console.log(fontData);
-        // link to download
-        console.log(fontData.items[item].files.regular);
-        // serif/sans
-        console.log(fontData.items[item].category);
-        // family
-        console.log(fontData.items[item].family);
-
         currentFontFamily = fontData.items[item].family;
-        console.log(currentFontFamily);
         currentFontLink = fontData.items[item].files.regular;
 
         //append new stylesheet to head
@@ -80,38 +61,22 @@ function pageLoad (){
         quoteDisplayEl.style.fontFamily = currentFontFamily;
 
         displayFont(fontData.items[item].family, fontData.items[item].category);
-
-
     };
 
 //function to randomly apply new quote to card elements
 function renderNewQuote() {
-
     var item = Math.floor(Math.random() * 10); 
-    console.log(item);
-
-    console.log(quoteData);
-
-    // quote
-    console.log(quoteData.data[item].quoteText);
-    //author
-    console.log(quoteData.data[item].quoteAuthor);
-
     displayQuote(quoteData.data[item].quoteText, quoteData.data[item].quoteAuthor)
-
 };
 
 
 //displays font name and category to card
 function displayFont(fontFamily, fontCategory) {
-
     fontNameDisplay.textContent = fontFamily + ", " + fontCategory;
-
 }
 
 //displays quote to card
 function displayQuote(quoteText, quoteAuthor) {
-
     quoteDisplayEl.textContent = '"' + quoteText + '"' + " -" + quoteAuthor;
 }
 
@@ -131,18 +96,18 @@ function goToFavoritesPage () {
 // Function to go to about page
 function goToAboutPage () {
     window.location.href = "about.html"
-  };
+};
 
 // Function to go to matchmaker page
 function goToMatchPage () {
     window.location.href = "matchmaker.html"
-  };
+};
 
 // Function to render a new font and quote combo on each click
   function renderNew () {
     renderNewQuote();
     renderNewFont();
-  }
+}
 
 // Function to render a new font and quote combo and save favorite
 function renderNewSave () {
@@ -160,14 +125,9 @@ function renderNewSave () {
     }
 
     var storedFavorites = JSON.parse(localStorage.getItem("favorite"));
-
     storedFavorites.push(fontInfo);
-
     localStorage.setItem("favorite", JSON.stringify(storedFavorites));
-
-    console.log(storedFavorites);
-  }
-
+}
 
 //Favorite button for user to save information
 document.getElementById('btn-up').addEventListener("click", saveFont);
@@ -184,7 +144,6 @@ document.getElementById('match-page-btn').addEventListener("click", goToMatchPag
 
 //go to new quote
 document.getElementById('btn-down').addEventListener("click", renderNew);
-
 document.getElementById('btn-up').addEventListener("click", renderNewSave);
 
 // Sidebar Navigation
