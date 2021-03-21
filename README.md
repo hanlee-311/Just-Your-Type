@@ -26,7 +26,7 @@ Figma Mockup: https://www.figma.com/file/f2Q9guyviAR8LlutnEvlPL/Find-Your-Font?n
 ![FigmaDesign](assets/images/figmaFYF.png)
 
 Our deployed version is a much cleaner version of our mock-up. We wanted to make it clear to where all the actions happen. Here is a GIF file of our entire project.
-![ActualDesign](assets/images/JYTGIF.gif)
+![LiveDemo](assets/images/JYTGIF.gif)
 
 ## Future Directions
 
