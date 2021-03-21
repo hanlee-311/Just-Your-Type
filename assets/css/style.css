@@ -110,8 +110,8 @@
 .aboutPic {
     background-color: var(--main-color);
     color: var(--text-color);
-    font-size: 1vw;
-    width: 45%;
+    font-size: 5vw;
+    width: 90%;
     align-items: center;
     text-align: center;
     font-family: 'Oswald', sans-serif;
@@ -124,8 +124,15 @@
 }
 
 .aboutContent {
-    margin: 1rem 0;
     text-transform: uppercase;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.aboutText {
+    margin: 2rem 0;
+    line-height: 2rem;
+    width: 90%;
 }
 strong {
     font-weight: 900;
