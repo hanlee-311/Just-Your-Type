@@ -19,51 +19,57 @@
     <title>Just Your Type</title>
 </head>
 <body>
-    <nav class="nav-wrapper">
-        <div class="container">
-          <a href="#" class="logo center-on-med-and-down">Just Your Type</a>
-          <a href="#" class="sidenav-trigger" data-target="mobile-links">
-            <i class="material-icons" id="hamburgerMenu">menu</i></a>
-          <ul id="nav-mobile" class="right">
-            <li><a id="home-page-btn" class="navText" href="#l">Home</a></li>
-            <li><a id="about-page-btn" class="navText" href="#">About</a></li>
-            <li><a id="favorite-page-btn" class="navText" href="#">Fav's</a></li>
-            <li><a id="match-page-btn" class="navText" href="#">MatchMaker<strong>(BETA)</strong></a></li>
-          </ul>
-        </div>
-    </nav>
+
+  <!-- Nav Bar -->
+  <nav class="nav-wrapper">
+    <div class="container">
+      <a href="#" class="logo center-on-med-and-down">Just Your Type</a>
+      <a href="#" class="sidenav-trigger" data-target="mobile-links">
+        <i class="material-icons" id="hamburgerMenu">menu</i></a>
+        <ul id="nav-mobile" class="right">
+          <li><a id="home-page-btn" class="navText" href="#l">Home</a></li>
+          <li><a id="about-page-btn" class="navText" href="#">About</a></li>
+          <li><a id="favorite-page-btn" class="navText" href="#">Fav's</a></li>
+          <li><a id="match-page-btn" class="navText" href="#">MatchMaker<strong>(BETA)</strong></a></li>
+        </ul>
+    </div>
+  </nav>
     
-      <ul class="sidenav" id="mobile-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="favorite.html">Fav's</a></li>
-        <li><a href="matchmaker.html">MatchMaker<strong>(BETA)</strong></a></li>
-      </ul>
+  <!-- Side-Nav Bar -->
+  <ul class="sidenav" id="mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="favorite.html">Fav's</a></li>
+    <li><a href="matchmaker.html">MatchMaker<strong>(BETA)</strong></a></li>
+  </ul>
      
+  <!-- Font-drop Test Area -->
+  <div class="row "  >
+    <div class="col s12 fontCardContainer valign-wrapper">
+      <div class="draggable-font" class="row"></div>
 
-      <div class="row "  >
-        <div class="col s12 fontCardContainer valign-wrapper">
-            <div class="draggable-font" class="row"></div>
+      <div class="card hoverable mainFontCard" >
+        <div id="capture" class="card-content insideCard droppable" class="ui-widget-header">
+          <span class="card-title font-name insideCard" style="font-size:3vw"></span>
+          <p class="quote insideCard" style="font-size:2vw"></p>
+        </div>
 
-          <div class="card hoverable mainFontCard" >
-            <div id="capture" class="card-content insideCard droppable" class="ui-widget-header">
-              <span class="card-title font-name insideCard" style="font-size:3vw"></span>
-              <p class="quote insideCard" style="font-size:2vw"></p>
-             </div>
-             <div class="card-action insideCard">
-               <a class="btn-small cardButtons left-align reset" style="margin:2vw" id="btn-down"><i class="material-icons">clear</i></a>
-               <a onclick="takeShot()" class="btn-small cardButtons right-align" style="margin:2vw" id="btn-up"><i class="material-icons ">camera_alt</i></a>
-             </div>
-           </div> 
+        <div class="card-action insideCard">
+          <a class="btn-small cardButtons left-align reset" style="margin:2vw" id="btn-down"><i class="material-icons">clear</i></a>
+          <a onclick="takeShot()" class="btn-small cardButtons right-align" style="margin:2vw" id="btn-up"><i class="material-icons ">camera_alt</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
            
-           <!-- In Beta, currently not in use -->
-           <!-- <div class = "col-3">
-           <h3>Screenshots:</h3> 
-           <div id="output"></div>  -->
+  <!-- In Beta, currently not in use -->
+  <!-- <div class = "col-3">
+    <h3>Screenshots:</h3> 
+    <div id="output"></div>  -->
     
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
-    <script src="assets/js/matchmaker.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+  <script src="assets/js/matchmaker.js"></script>
 </body>
 </html>
