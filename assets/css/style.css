@@ -64,10 +64,14 @@
 }
 
 #favorite-wrapper {
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 /* Favorite Page Style */
+
+.pagination {
+    margin-top: 25px;
+}
 
 .fontCardContainerFavorite  { 
     justify-content: center;
