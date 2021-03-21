@@ -21,7 +21,6 @@
     font-size: 1.5rem;
 }
 
-
 #hamburgerMenu {
     color: var(--text-color);
 }
@@ -65,10 +64,14 @@
 }
 
 #favorite-wrapper {
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 /* Favorite Page Style */
+
+.pagination {
+    margin-top: 25px;
+}
 
 .fontCardContainerFavorite  { 
     justify-content: center;
@@ -87,13 +90,21 @@
     width: 100%;
 }
 
-/* .waves-effect { */
-    /* margin: 15px;
-    padding: 10px;
-    border: solid black;
-    font-size: 18px;
-} */
+.download:hover {
+    text-decoration: underline;
+    color: #26a69a;
+}
 
+.waves-effect {
+    padding: 1em;
+    margin: 15px 5px;
+}
+
+.active {
+    color: white;
+    margin: 15px 5px;
+    padding: 1em;
+}
 
 /* ABOUT US PAGE */
 #aboutPagePicture {
@@ -118,7 +129,6 @@
     text-transform: uppercase;
 }
 
-
 .aboutContainer {
     width: 100vw;
 }
@@ -138,7 +148,6 @@
 strong {
     font-weight: 900;
 }
- 
 
 .resizable {
     font-size: 15px;

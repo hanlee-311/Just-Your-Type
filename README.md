@@ -25,8 +25,6 @@ Figma Mockup: https://www.figma.com/file/f2Q9guyviAR8LlutnEvlPL/Find-Your-Font?n
 
 ![FigmaDesign](assets/images/figmaFYF.png)
 
-
-
 Our deployed version is a much cleaner version of our mock-up. We wanted to make it clear to where all the actions happen. Here is a GIF file of our entire project.
 ![ActualDesign](assets/images/JYTGIF.gif)
 
@@ -48,8 +46,12 @@ Main Tasks - Developed the Favorite Page. Developed all the micro interactions t
 
 https://github.com/hanlee-311
 
+
 Ryan Vega - Lead CSS Developer, Designer
 
 Main Tasks - Created initial mockup design of the project. Designed all the pages in the actual application. Made all the pages responsive.
 
 https://github.com/vegaryanneil
+
+Our deployed version is a much cleaner version of our mock-up. We wanted to make it clear to where all the actions happen.
+
