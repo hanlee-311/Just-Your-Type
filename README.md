@@ -34,24 +34,22 @@ We have some ideas for the future of Just Your Type. We want to get our MatchMak
 
 ## Contributors and Roles
 
-Barbara Kenny - Lead Javascript Developer, Debugger
+### Barbara Kenny - Lead Javascript Developer, Debugger
 
 Main Tasks - Figured out how to get the application working with Google Fonts API and Quote Garden. Started Development of future features.
 
 https://github.com/BarbaraShea
 
-Hannah Lee - CSS and Javascript Developer, Debugger
+
+### Hannah Lee - CSS and Javascript Developer, Debugger
 
 Main Tasks - Developed the Favorite Page. Developed all the micro interactions throughout the entire project.
 
 https://github.com/hanlee-311
 
 
-Ryan Vega - Lead CSS Developer, Designer
+### Ryan Vega - Lead CSS Developer, Designer
 
 Main Tasks - Created initial mockup design of the project. Designed all the pages in the actual application. Made all the pages responsive.
 
 https://github.com/vegaryanneil
-
-Our deployed version is a much cleaner version of our mock-up. We wanted to make it clear to where all the actions happen.
-
