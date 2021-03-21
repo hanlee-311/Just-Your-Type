@@ -22,8 +22,8 @@ We took inspiration from dating apps such as Tinder and Bumble. We chose to use 
 Link to Wireframe via Figma
 https://github.com/hanlee-311/project_1.git
 
-![FigmaDesign](assets/figmaFYF.png)
+![FigmaDesign](assets/images/figmaFYF.png)
 
 
 Our deployed version is a much cleaner version of our mock-up. We wanted to make it clear to where all the actions happen.
-![ActualDesign](assets/FYF1.png)
+![ActualDesign](assets/images/FYF1.png)
