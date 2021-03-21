@@ -137,14 +137,15 @@
 
 .aboutContent {
     text-transform: uppercase;
-    margin: 2rem 0;
-    width: 100%;
+    margin: auto;
+    width: 90%;
 }
 
 .aboutText {
-    margin: 2rem 0;
+    margin: auto;
     line-height: 2rem;
-    width: 90%;
+    width: 100%;
+    padding: 2rem 0;
 }
 
 strong {
