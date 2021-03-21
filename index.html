@@ -14,48 +14,52 @@
     <link rel="icon" href="assets/images/favicon.png"> 
     <title>Just Your Type</title>
 </head>
+
 <body>
   
   <!-- Nav Bar -->
-
-    <nav class="nav-wrapper">
-      <div class="container">
-        <a href="#" class="logo center-align">Just Your Type</a>
-        <a href="#" class="sidenav-trigger" data-target="mobile-links">
-          <i class="material-icons" id="hamburgerMenu">menu</i></a>
+  <nav class="nav-wrapper">
+    <div class="container">
+      <a href="#" class="logo center-align">Just Your Type</a>
+      <a href="#" class="sidenav-trigger" data-target="mobile-links">
+        <i class="material-icons" id="hamburgerMenu">menu</i></a>
         <ul id="nav-mobile" class="right">
-          <li><a id="home-page-btn" class="navText" href="#l">Home</a></li>
-          <li><a id="about-page-btn" class="navText" href="#">About</a></li>
-          <li><a id="favorite-page-btn" class="navText" href="#">Fav's</a></li>
-          <li><a id="match-page-btn" class="navText" href="#">MatchMaker</a></li>
-        </ul>
-      </div>
-    </nav>
+        <li><a id="home-page-btn" class="navText" href="#l">Home</a></li>
+        <li><a id="about-page-btn" class="navText" href="#">About</a></li>
+        <li><a id="favorite-page-btn" class="navText" href="#">Fav's</a></li>
+        <li><a id="match-page-btn" class="navText" href="#">MatchMaker<strong>(BETA)</strong></a></li>
+      </ul>
+    </div>
+  </nav>
+    
+  <!-- Side-Nav Bar -->
+  <ul class="sidenav" id="mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="favorite.html">Fav's</a></li>
+    <li><a href="matchmaker.html">MatchMaker<strong>(BETA)</strong></a></li>
+  </ul>
 
-    <ul class="sidenav" id="mobile-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="favorite.html">Fav's</a></li>
-      <li><a href="draggable.html">MatchMaker</a></li>
-    </ul>
+  <!-- Font card to be populated by API -->
+  <div class="row">
+    <div class="col s12 fontCardContainer valign-wrapper">
+      <div class="card hoverable mainFontCard">
+        <div class="card-content insideCard">
+          <span class="card-title font-name insideCard" style="font-size:3.5vw"></span>
+          <p class="quote insideCard" style="font-size:2.5vw"></p>
+        </div>
+        
+        <div class="card-action insideCard">
+          <a class="btn-small cardButtons left-align" style="margin:2vw" id="btn-down"><i class="material-icons">clear</i></a>
+          <a class="btn-small cardButtons right-align" style="margin:2vw" id="btn-up"><i class="material-icons ">favorite</i></a>
+        </div>
+      </div> 
+    </div>
+  </div>
 
-     <!-- Font card to be populated by API -->
-       <div class="row">
-         <div class="col s12 fontCardContainer valign-wrapper">
-           <div class="card hoverable mainFontCard">
-             <div class="card-content insideCard">
-               <span class="card-title font-name insideCard" style="font-size:3.5vw"></span>
-               <p class="quote insideCard" style="font-size:2.5vw"></p>
-              </div>
-              <div class="card-action insideCard">
-                <a class="btn-small cardButtons left-align" style="margin:2vw" id="btn-down"><i class="material-icons">clear</i></a>
-                <a class="btn-small cardButtons right-align" style="margin:2vw" id="btn-up"><i class="material-icons ">favorite</i></a>
-              </div>
-            </div> 
-
-    <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
+  <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
 

@@ -4,6 +4,7 @@
     --button-color: #9DDFD3;
 }
 
+/*Header Styling*/
 .logo {
     color: var(--text-color);
     padding: 0 2rem;
@@ -21,11 +22,11 @@
     font-size: 1.5rem;
 }
 
-
 #hamburgerMenu {
     color: var(--text-color);
 }
 
+/*Main Content Styling on Home Page*/
 .mainFontCard {
     justify-content: center;
     align-items: center;
@@ -60,16 +61,6 @@
     font-family: 'Oswald', sans-serif;
 }
 
-#favorite-btn {
-    background-color: var(--button-color);
-}
-
-#favorite-wrapper {
-    margin-top: 50px;
-}
-
-/* Favorite Page Style */
-
 .fontCardContainerFavorite  { 
     justify-content: center;
     align-items: center;
@@ -81,23 +72,45 @@
     align-items: center;
 }
 
+/* Favorite Page Style */
+
+#favorite-btn {
+    background-color: var(--button-color);
+}
+
+#favorite-wrapper {
+    margin-top: 25px;
+}
+
+.pagination {
+    margin-top: 25px;
+}
+
 .row {
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-/* .waves-effect { */
-    /* margin: 15px;
-    padding: 10px;
-    border: solid black;
-    font-size: 18px;
-} */
+.download:hover {
+    text-decoration: underline;
+    color: #26a69a;
+}
 
+.waves-effect {
+    padding: 1em;
+    margin: 15px 5px;
+}
+
+.active {
+    color: white;
+    margin: 15px 5px;
+    padding: 1em;
+}
 
 /* ABOUT US PAGE */
 #aboutPagePicture {
-    background-image: url(../pinkperson.jpg);
+    background-image: url(../images/pinkperson.jpg);
     width: 100%;
     height: 70vh;
     background-position: bottom;
@@ -110,41 +123,42 @@
 .aboutPic {
     background-color: var(--main-color);
     color: var(--text-color);
-    font-size: 1vw;
-    width: 45%;
+    font-size: 5vw;
+    width: 90%;
     align-items: center;
     text-align: center;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
 }
 
-
 .aboutContainer {
     width: 100vw;
 }
 
 .aboutContent {
-    margin: 1rem 0;
     text-transform: uppercase;
+    margin: auto;
+    width: 90%;
 }
+
+.aboutText {
+    margin: auto;
+    line-height: 2rem;
+    width: 100%;
+    padding: 2rem 0;
+}
+
 strong {
     font-weight: 900;
 }
- 
 
-.resizable {
-    font-size: 15px;
-
-}
-
+/*MatchMaker Styling*/
 .draggable :hover {
  cursor: pointer;
 }
 
-
 .resizable {
     font-size: 15px;
-
 }
 
 .draggable :hover {
@@ -155,7 +169,8 @@ strong {
     z-index: 3;
 }
 
-@media only screen and (max-width: 1268px) {
+/*Media Size Styling*/
+@media only screen and (max-width: 1346px) {
     .navText { 
         display: none;
     }

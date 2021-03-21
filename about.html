@@ -13,27 +13,32 @@
     <link rel="icon" href="assets/images/favicon.png"> 
     <title>Just Your Type</title>
 </head>
+
 <body>
+  <!-- Nav Bar -->
   <nav class="nav-wrapper">
     <div class="container">
       <a href="#" class="logo">Just Your Type</a>
       <a href="#" class="sidenav-trigger" data-target="mobile-links">
         <i class="material-icons" id="hamburgerMenu">menu</i></a>
-      <ul id="nav-mobile" class="right">
+        <ul id="nav-mobile" class="right">
         <li><a id="home-page-btn" class="navText" href="#l">Home</a></li>
         <li><a id="about-page-btn" class="navText" href="#">About</a></li>
         <li><a id="favorite-page-btn" class="navText" href="#">Fav's</a></li>
-        <li><a id="match-page-btn" class="navText" href="#">MatchMaker</a></li>
+        <li><a id="match-page-btn" class="navText" href="#">MatchMaker<strong>(BETA)</strong></a></li>
       </ul>
     </div>
   </nav>
 
+  <!-- Side-Nav Bar -->
   <ul class="sidenav" id="mobile-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="favorite.html">Fav's</a></li>
-    <li><a href="draggable.html">MatchMaker</a></li>
+    <li><a href="matchmaker.html">MatchMaker<strong>(BETA)</strong></a></li>
   </ul>
+
+  <!-- Title Card and Image -->
   <div class="row fontCardContainerFavorite">
     <div class="container aboutContainer">
       <div class="card-content insideCard" id="aboutPagePicture">
@@ -44,21 +49,25 @@
     </div> 
   </div>
 
-
+  <!-- How it Works Card -->
   <div class="row hoverable aboutContent">
-    <span class="card-title" style="font-size:6vw"><strong>How It Works</strong></span>
-    <p style="font-size:2vw">Just Your Type was born out of a desire to reinvent and gamify how designers, like you, find fonts. Playing off the dating app model, this application allows you to quickly save or discard the fonts that are <strong>JUST YOUR TYPE</strong> and create a library of your favorite typography.</p>
-  </div>
-  <div class="row hoverable aboutContent">
-    <span class="card-title" style="font-size:6vw"><strong>About Us</strong></span>
-    <p style="font-size:2vw">We are web developers and we know that designers have <strong>strong</strong> feelings about fonts. So we decided to create a fun and efficient way for our designer counterparts to <strong>explore and save typography</strong> to use on their future projects.</p>
-  </div>
-  <div class="row hoverable aboutContent">
-    <span class="card-title" style="font-size:6vw"><strong>Coming Soon</strong></span>
-    <p style="font-size:2vw"> We are in the process of building the newest feature for JUST YOUR TYPE, <strong>the MatchMaker page</strong>. On this page, designers will be able to interact with the text and save pairings of their favorite typography.</p>
+    <span class="card-title" style="font-size:5vw"><strong>How It Works</strong></span>
+    <p class="aboutText" style="font-size:2vw">Just Your Type was born out of a desire to reinvent and gamify how designers, like you, find fonts. Playing off the dating app model, this application allows you to quickly save or discard the fonts that are <strong>JUST YOUR TYPE</strong> and create a library of your favorite typography.</p>
   </div>
 
-    <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
-    <script src="assets/js/about.js"></script>
+  <!-- About the developers card -->
+  <div class="row hoverable aboutContent">
+    <span class="card-title" style="font-size:5vw"><strong>About Us</strong></span>
+    <p class="aboutText" style="font-size:2vw">We are web developers and we know that designers have <strong>strong</strong> feelings about fonts. So we decided to create a fun and efficient way for our designer counterparts to <strong>explore and save typography</strong> to use on their future projects.</p>
+  </div>
+  
+  <!-- Features that are coming soon card -->
+  <div class="row hoverable aboutContent">
+    <span class="card-title" style="font-size:5vw"><strong>Coming Soon</strong></span>
+    <p class="aboutText" style="font-size:2vw"> We are in the process of building the newest feature for JUST YOUR TYPE, <strong>the MatchMaker page</strong>. On this page, designers will be able to interact with the text and save pairings of their favorite typography.</p>
+  </div>
+
+  <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+  <script src="assets/js/about.js"></script>
 </body>
 </html>
