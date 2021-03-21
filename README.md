@@ -40,6 +40,7 @@ Main Tasks - Figured out how to get the application working with Google Fonts AP
 
 https://github.com/BarbaraShea
 
+
 ### Hannah Lee - CSS and Javascript Developer, Debugger
 
 Main Tasks - Developed the Favorite Page. Developed all the micro interactions throughout the entire project.
@@ -52,4 +53,3 @@ https://github.com/hanlee-311
 Main Tasks - Created initial mockup design of the project. Designed all the pages in the actual application. Made all the pages responsive.
 
 https://github.com/vegaryanneil
-

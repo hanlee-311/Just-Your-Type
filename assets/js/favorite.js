@@ -1,9 +1,19 @@
 var favoriteCollectionOne = document.querySelector('.first-row');
 var favoriteCollectionTwo = document.querySelector('.second-row');
 var favoritePagination = document.querySelector('.pagination');
+var noFavotires = document.querySelector('#empty')
 var savedFavorites = JSON.parse(localStorage.getItem('favorite'));
 let current_page = 1;
 let numberOfCards = 6;
+
+//Renders "No Saved Favorites" or removes it
+function emptyFavorites () {
+  if (savedFavorites == null || savedFavorites == 0) {
+    noFavotires.classList.remove('hide');
+  } else {
+    noFavotires.classList.add('hide');
+  }
+}
 
 //Rendering favorites on fave
 function renderFavorites (card, cards_per_page, page) {
@@ -178,3 +188,4 @@ var collapsibleInstance = M.Collapsible.init(collapsibleElem);
 
 renderFavorites(savedFavorites, numberOfCards, current_page);
 setUpPagination(savedFavorites, favoritePagination, numberOfCards);
+emptyFavorites();
